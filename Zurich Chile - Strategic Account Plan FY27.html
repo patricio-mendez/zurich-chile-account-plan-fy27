@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Plan estratégico FY27 Zurich Chile × Salesforce — partner agéntico del asegurador más innovador de Chile.">
+<meta name="theme-color" content="#23366f">
+<title>Zurich Chile · Strategic Account Plan FY27 — Salesforce as Innovation Partner</title>
+<style>
+  /* === ZURICH CHILE BRAND COLORS + SALESFORCE DESIGN TOKENS === */
+  :root{
+    /* Zurich Brand Colors (from zurich.cl) */
+    --zurich-navy:#23366f;      /* Zurich Navy (primary dark) */
+    --zurich-blue:#2167ae;      /* Zurich Blue (primary) */
+    --zurich-blue-light:#4870c6; /* Zurich Light Blue */
+    --zurich-blue-accent:#5495CF; /* Zurich Sky Blue */
+    --zurich-yellow:#fde62e;    /* Zurich Yellow (accent) */
+
+    /* Mapped to functional tokens */
+    --sf-blue:#4870c6;          /* Primary interactive (Zurich blue light) */
+    --sf-blue-active:#2167ae;   /* Active state (Zurich blue) */
+    --sf-cloud-60:#5495CF;      /* Cloud accent (Zurich sky) */
+    --sf-deep:#23366f;          /* Headers/Dark (Zurich navy) */
+    --sf-navy:#23366f;          /* Navigation (Zurich navy) */
+
+    /* Neutrals (Zurich.cl palette) */
+    --n0:#ffffff;
+    --n1:#f9f9f9;
+    --n2:#EEF0F1;
+    --n3:#DFE2E4;
+    --n4:#DDE4E3;
+    --n6:#c9c7c5;
+    --n8:#969492;
+    --n10:#666666;
+    --n12:#3e3e3e;
+    --n13:#333333;
+
+    /* Semantic */
+    --ok:#a7e9aa;               /* Success (Zurich green) */
+    --warn:#ffc8a9;             /* Warning (Zurich coral) */
+    --err:#f2c3e0;              /* Error (Zurich pink) */
+    --destructive:#ba0517;
+
+    /* Accent colors */
+    --gold:#fde62e;             /* Zurich Yellow (primary accent) */
+    --gold-deep:#dfd1b7;        /* Zurich Beige (secondary accent) */
+
+    --line:#DFE2E4;
+    --line-strong:#DDE4E3;
+    --shadow:0 1px 2px rgba(35,54,111,.04);
+    --shadow-lg:0 4px 16px rgba(35,54,111,.08);
+    --radius:8px;
+    --radius-lg:10px;
+
+    /* Tipografía SF */
+    --ff:"Salesforce Sans","SF Pro Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --ff-display:"Salesforce Sans","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--n1);color:var(--n13);font-family:var(--ff);line-height:1.5;-webkit-font-smoothing:antialiased}
+
+  /* === NAV === */
+  .nav{position:sticky;top:0;z-index:50;background:var(--sf-navy);color:#fff;border-bottom:1px solid #ffffff15;backdrop-filter:saturate(180%) blur(8px)}
+  .nav-inner{max-width:1320px;margin:0 auto;padding:14px 40px;display:flex;align-items:center;gap:4px;font-size:13px;flex-wrap:nowrap}
+  .nav-logo{font-weight:600;letter-spacing:.3px;display:flex;align-items:center;gap:10px;font-size:12.5px;white-space:nowrap;flex-shrink:0}
+  .nav-logo .cloud{display:inline-block;width:24px;height:18px;background:var(--sf-blue);border-radius:12px 12px 12px 3px;margin-right:6px}
+  .nav-logo b{color:var(--sf-blue);font-weight:600}
+  .nav-spacer{flex:1}
+  .nav-links{display:flex;align-items:center;gap:2px;flex-wrap:nowrap}
+  .nav a{color:#ffffff99;text-decoration:none;padding:6px 11px;border-radius:4px;transition:.15s;font-weight:500;font-size:12.5px;white-space:nowrap}
+  .nav a:hover{color:#fff;background:#ffffff0a}
+  .nav .nav-sep{width:1px;height:14px;background:#ffffff20;margin:0 6px;flex-shrink:0}
+  @media (max-width:1180px){
+    .nav-inner{padding:14px 24px;gap:0}
+    .nav .nav-sep{display:none}
+    .nav-links{overflow-x:auto;scrollbar-width:none}
+    .nav-links::-webkit-scrollbar{display:none}
+    .toc{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:640px){
+    .toc{grid-template-columns:1fr}
+  }
+
+  /* === HERO === */
+  .hero{background:linear-gradient(135deg,#001639 0%,#23366f 50%,#2167ae 100%);color:#fff;padding:88px 0 72px;position:relative;border-bottom:1px solid #ffffff15}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
+  .hero .wrap > *{max-width:1200px;width:100%}
+  .eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--sf-blue);font-weight:600;display:inline-flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:24px;height:1px;background:var(--sf-blue);display:inline-block}
+  h1{font-family:var(--ff-display);font-size:48px;line-height:1.1;margin:20px 0 18px;font-weight:600;letter-spacing:-.6px}
+  h1 .accent{color:var(--sf-blue)}
+  .lede{font-size:18px;color:#ffffffb3;font-weight:400;line-height:1.55}
+
+  /* === TOC Navigation === */
+  .toc{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:52px}
+  .toc a{background:transparent;color:#fff;text-decoration:none;padding:16px 14px;border-radius:var(--radius);font-size:12.5px;border:1px solid #ffffff20;transition:.15s;font-weight:500;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px}
+  .toc a:hover{background:#ffffff08;border-color:var(--zurich-blue-light);transform:translateY(-2px)}
+  .toc a .num{color:var(--zurich-yellow);font-size:11px;letter-spacing:1.5px;font-weight:700;display:block}
+
+  /* === Hero Logos === */
+  .hero-logos{display:flex;justify-content:space-between;align-items:flex-end;margin-top:64px;padding-top:48px;border-top:1px solid #ffffff15;gap:40px}
+  .hero-logos img{height:40px;width:auto;opacity:0.85;transition:opacity 0.3s ease,transform 0.3s ease;filter:brightness(0) invert(1)}
+  .hero-logos img:hover{opacity:1;transform:scale(1.05)}
+  .hero-logos .logo-zurich{height:42px}
+  .hero-logos .logo-salesforce{height:36px}
+  @media (max-width:768px){
+    .hero-logos{flex-direction:column;align-items:center;gap:24px}
+    .hero-logos img{height:32px}
+    .hero-logos .logo-zurich{height:34px}
+    .hero-logos .logo-salesforce{height:28px}
+  }
+
+  /* === Smooth scrolling === */
+  html{scroll-behavior:smooth}
+  section[id]{scroll-margin-top:80px}
+
+  section{padding:88px 0;border-bottom:1px solid var(--line)}
+  section.alt{background:var(--n0)}
+  section.dark{background:var(--sf-navy);color:#fff;border-bottom:none}
+  section.dark h2{color:#fff}
+  section.dark .h2-sub{color:#ffffff99}
+  .section-no{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--sf-blue-active);font-weight:600;margin-bottom:8px;display:block}
+  h2{font-family:var(--ff-display);font-size:32px;margin:0 0 12px;letter-spacing:-.4px;font-weight:600;color:var(--sf-deep);line-height:1.2}
+  .h2-sub{color:var(--n12);font-size:14.5px;margin-bottom:48px;max-width:840px;line-height:1.6}
+  h3{font-family:var(--ff-display);font-size:17px;margin:0 0 8px;font-weight:600;color:var(--sf-deep);letter-spacing:-.1px}
+  h4{font-size:10.5px;color:var(--n10);text-transform:uppercase;letter-spacing:1.4px;margin:0 0 8px;font-weight:600}
+
+  /* === HEADLINE STORY + WIN THEME === */
+  .headline{background:var(--n0);border-bottom:1px solid var(--line);padding:48px 0 24px}
+  .headline .wrap{display:grid;grid-template-columns:1fr 380px;gap:36px;align-items:stretch}
+  .hl-main{padding-right:8px;border-right:1px solid var(--line)}
+  .hl-main .stamp{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-deep);font-weight:700;display:inline-flex;align-items:center;gap:10px}
+  .hl-main .stamp::before{content:"";width:24px;height:1px;background:var(--gold-deep);display:inline-block}
+  .hl-main .story{font-family:var(--ff-display);font-size:30px;font-weight:600;color:var(--sf-deep);letter-spacing:-.4px;line-height:1.25;margin:14px 0 16px}
+  .hl-main .story em{font-style:normal;color:var(--sf-blue-active);font-weight:700}
+  .hl-main .story u{text-decoration:none;background:linear-gradient(180deg,transparent 60%,#fde62e66 60%);padding:0 2px}
+  .hl-main .lede{font-size:14.5px;color:var(--n12);line-height:1.6;max-width:780px}
+  .hl-main .lede b{color:var(--sf-deep);font-weight:600}
+
+  .win-theme{background:var(--sf-navy);color:#fff;padding:24px 26px;border-radius:var(--radius-lg);border-left:4px solid var(--gold);display:flex;flex-direction:column;gap:14px}
+  .win-theme .wt-h{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700;display:inline-flex;align-items:center;gap:10px}
+  .win-theme .wt-h::before{content:"◆";font-size:11px;color:var(--gold)}
+  .win-theme .wt-claim{font-family:var(--ff-display);font-size:18px;font-weight:600;color:#fff;line-height:1.3;letter-spacing:-.2px}
+  .win-theme .wt-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#ffffff20;border-radius:var(--radius);overflow:hidden;margin-top:auto}
+  .win-theme .wt-p{background:var(--sf-navy);padding:12px;text-align:center}
+  .win-theme .wt-p .n{font-family:var(--ff-display);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:4px}
+  .win-theme .wt-p .v{font-size:11.5px;color:#fff;font-weight:600;line-height:1.35}
+
+  @media (max-width:1100px){
+    .headline .wrap{grid-template-columns:1fr}
+    .hl-main{border-right:none;padding-right:0;border-bottom:1px solid var(--line);padding-bottom:24px}
+    .hl-main .story{font-size:24px}
+  }
+
+  /* === EXECUTIVE SUMMARY · BLUF === */
+  .exec{background:var(--n0);border-bottom:1px solid var(--line)}
+  .exec .wrap{padding-top:64px;padding-bottom:64px}
+  .exec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:32px;flex-wrap:wrap}
+  .exec-head .left .stamp{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--sf-blue-active);font-weight:600;display:inline-flex;align-items:center;gap:10px}
+  .exec-head .left .stamp::before{content:"";width:24px;height:1px;background:var(--sf-blue-active);display:inline-block}
+  .exec-head h2{font-size:30px;margin:8px 0 0;letter-spacing:-.4px}
+  .exec-head .right{font-size:11.5px;color:var(--n10);text-align:right;line-height:1.6;max-width:300px}
+  .exec-head .right b{color:var(--sf-deep);display:block;font-size:12.5px;letter-spacing:.5px;margin-bottom:4px}
+
+  .scqa{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:var(--n0)}
+  .scqa-cell{padding:24px 24px;border-right:1px solid var(--line);position:relative}
+  .scqa-cell:last-child{border-right:none}
+  .scqa-cell .tag{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;font-weight:700;color:var(--n10);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .scqa-cell .tag .num{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--sf-deep);color:#fff;font-size:10px;font-weight:700}
+  .scqa-cell.s .tag .num{background:var(--n12)}
+  .scqa-cell.c .tag .num{background:var(--err)}
+  .scqa-cell.q .tag .num{background:var(--warn)}
+  .scqa-cell.a .tag .num{background:var(--ok)}  .scqa-cell .hd{font-family:var(--ff-display);font-size:15px;font-weight:600;color:var(--sf-deep);line-height:1.3;margin-bottom:10px}
+  .scqa-cell ul{list-style:none;margin:0;padding:0;font-size:13px;color:var(--n12);line-height:1.6}
+  .scqa-cell ul li{margin-bottom:7px;padding-left:16px;position:relative}
+  .scqa-cell ul li::before{content:"—";position:absolute;left:0;color:var(--sf-blue)}
+
+  @media (max-width:960px){
+    .scqa{grid-template-columns:1fr;gap:1px}
+    .scqa-cell{border-right:none;border-bottom:1px solid var(--line)}
+    .scqa-cell:last-child{border-bottom:none}
+  }
+
+  /* === VALUE MAP === */
+  .value-map{background:var(--n0)}
+  .vmap{display:grid;grid-template-columns:200px 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden}
+  .vmap-dims{display:flex;flex-direction:column;border-right:1px solid var(--line)}
+  .vmap-dim{padding:18px 18px;background:var(--n2);border-bottom:1px solid var(--line);font-size:11.5px;font-weight:600;color:var(--sf-deep);display:flex;align-items:center;text-align:center;justify-content:center;min-height:88px;letter-spacing:.3px}
+  .vmap-dim:last-child{border-bottom:none}
+  .vmap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .vmap-col{border-right:1px solid var(--line);display:flex;flex-direction:column}
+  .vmap-col:last-child{border-right:none}
+  .vmap-h{padding:18px 18px;background:var(--sf-deep);color:#fff;font-size:12px;font-weight:600;text-align:center;letter-spacing:.3px;line-height:1.3;border-bottom:1px solid #ffffff20;min-height:88px;display:flex;align-items:center;justify-content:center}
+  .vmap-cell{padding:14px 12px;border-bottom:1px solid var(--line);font-size:12px;color:var(--n12);line-height:1.5;min-height:88px;display:flex;align-items:center;background:var(--n0)}
+  .vmap-cell:last-child{border-bottom:none}
+  .vmap-cell ul{list-style:none;margin:0;padding:0}
+  .vmap-cell ul li{margin-bottom:5px;padding-left:12px;position:relative;font-size:11.5px}
+  .vmap-cell ul li::before{content:"•";position:absolute;left:0;color:var(--sf-blue);font-weight:700}
+  .vmap-cell.empty{background:repeating-linear-gradient(45deg,var(--n1),var(--n1) 10px,var(--n2) 10px,var(--n2) 20px)}
+
+  @media (max-width:1100px){
+    .vmap{grid-template-columns:1fr}
+    .vmap-dims{flex-direction:row;border-right:none;border-bottom:1px solid var(--line)}
+    .vmap-dim{border-right:1px solid var(--line);border-bottom:none;padding:12px 10px;min-height:auto}
+    .vmap-dim:last-child{border-right:none}
+    .vmap-grid{grid-template-columns:1fr;gap:1px;background:var(--line)}
+    .vmap-col{border-right:none;border-bottom:1px solid var(--line)}
+    .vmap-col:last-child{border-bottom:none}
+  }
+
+  /* === STAKEHOLDERS === */
+  .stakeholders{background:var(--n0)}
+  .stk-matrix{display:grid;grid-template-columns:200px 1fr 1fr;grid-template-rows:auto 1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:40px}
+  .stk-label{padding:16px;background:var(--n2);font-size:11px;font-weight:600;color:var(--n10);text-transform:uppercase;letter-spacing:1.2px;display:flex;align-items:center;justify-content:center;text-align:center;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .stk-label.corner{grid-column:1;grid-row:1}
+  .stk-label.top-l{grid-column:2;grid-row:1;border-right:1px solid var(--line)}
+  .stk-label.top-r{grid-column:3;grid-row:1}
+  .stk-label.left-t{grid-column:1;grid-row:2;border-bottom:1px solid var(--line)}
+  .stk-label.left-b{grid-column:1;grid-row:3}
+  .stk-quad{padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--n0);display:flex;flex-direction:column;gap:10px}
+  .stk-quad:nth-child(8){border-right:none}
+  .stk-quad:nth-child(9){border-bottom:none}
+  .stk-quad:nth-child(10){border-right:none;border-bottom:none}
+  .stk-quad.hi-pow-hi-int{background:#e8f1fc;grid-column:3;grid-row:2}
+  .stk-quad.hi-pow-lo-int{background:#fffaed;grid-column:3;grid-row:3}
+  .stk-quad.lo-pow-hi-int{background:#e7f7e8;grid-column:2;grid-row:2}
+  .stk-quad.lo-pow-lo-int{background:var(--n2);grid-column:2;grid-row:3}
+  .stk-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:12px 14px;box-shadow:var(--shadow)}
+  .stk-card .name{font-size:13px;font-weight:600;color:var(--sf-deep);margin-bottom:2px}
+  .stk-card .role{font-size:11px;color:var(--n10);margin-bottom:6px}
+  .stk-card .badge{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:2px 6px;border-radius:3px;background:var(--n3);color:var(--n10)}
+  .stk-card .badge.champion{background:#d4f4dd;color:#1e7e34}
+  .stk-card .badge.blocker{background:#ffe5e5;color:#c92a2a}
+  .stk-card .badge.neutral{background:var(--n3);color:var(--n10)}
+
+  @media (max-width:960px){
+    .stk-matrix{grid-template-columns:1fr;grid-template-rows:auto;gap:16px;border:none}
+    .stk-label{display:none}
+    .stk-quad{border:1px solid var(--line);border-radius:var(--radius)}
+    .stk-quad::before{content:attr(data-label);display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--n10);margin-bottom:12px}
+  }
+
+  /* === PARTNERS === */
+  .partners{background:var(--n1)}
+  .partner-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+  .partner-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-lg)}
+  .partner-card .p-head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+  .partner-card .p-logo{width:52px;height:52px;border-radius:8px;background:var(--n2);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--sf-blue);font-size:18px;border:1px solid var(--line)}
+  .partner-card .p-name{font-size:16px;font-weight:600;color:var(--sf-deep)}
+  .partner-card .p-type{font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1.2px;font-weight:600}
+  .partner-card .p-desc{font-size:13px;color:var(--n12);line-height:1.6;margin-bottom:14px}
+  .partner-card .p-scope{font-size:11px;color:var(--n10);line-height:1.6}
+  .partner-card .p-scope b{color:var(--sf-deep);font-weight:600;display:block;margin-bottom:4px;font-size:10px;letter-spacing:1.2px;text-transform:uppercase}
+
+  /* === FOOTPRINT === */
+  .footprint{background:var(--n0)}
+  .fp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px}
+  .fp-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px 24px;box-shadow:var(--shadow)}
+  .fp-card .fp-h{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--n10);font-weight:600;margin-bottom:10px}
+  .fp-card .fp-val{font-family:var(--ff-display);font-size:36px;font-weight:600;color:var(--sf-deep);line-height:1;margin-bottom:6px}
+  .fp-card .fp-lbl{font-size:12px;color:var(--n10);line-height:1.4}
+  .fp-table{border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:#fff}
+  .fp-table table{width:100%;border-collapse:collapse}
+  .fp-table th{background:var(--n2);padding:12px 16px;text-align:left;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--n10);font-weight:600;border-bottom:1px solid var(--line)}
+  .fp-table td{padding:12px 16px;font-size:12.5px;color:var(--n12);border-bottom:1px solid var(--line)}
+  .fp-table tr:last-child td{border-bottom:none}
+  .fp-table td:first-child{font-weight:600;color:var(--sf-deep)}
+  .fp-table td.num{text-align:right;font-family:var(--ff-display);font-weight:600}
+
+  @media (max-width:960px){
+    .fp-grid{grid-template-columns:1fr;gap:16px}
+  }
+
+  /* === ACTION PLAN / GANTT === */
+  .action-plan{background:var(--n1)}
+
+  /* GANTT ROADMAP */
+  .gantt{background:var(--n0);border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px 28px;margin-bottom:36px;overflow-x:auto}
+  .gantt-head{display:grid;grid-template-columns:280px repeat(9,1fr);gap:0;padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:8px;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--n10);font-weight:600;min-width:1000px}
+  .gantt-head .col-init{padding-left:4px}
+  .gantt-head .col-q{text-align:center;border-left:1px solid var(--line);position:relative}
+  .gantt-head .col-q.qsep{border-left:1px solid var(--line-strong)}
+  .gantt-head .col-q b{display:block;color:var(--sf-deep);font-size:11px;letter-spacing:.5px;text-transform:none;font-weight:600;margin-bottom:2px}
+  .gantt-quarter-band{display:grid;grid-template-columns:280px repeat(9,1fr);gap:0;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--sf-deep);font-weight:600;padding:6px 0;border-bottom:1px dashed var(--line);min-width:1000px}
+  .gantt-quarter-band .qb{text-align:center;background:var(--n2);padding:6px 4px;border-radius:3px;margin:0 1px;grid-column:span 3}
+  .gantt-quarter-band .qb.q2{background:#4870c615;color:var(--sf-blue-active)}
+  .gantt-quarter-band .qb.q3{background:#5495CF15;color:var(--sf-cloud-60)}
+  .gantt-quarter-band .qb.q4{background:#5b21b615;color:#5b21b6}
+
+  .gantt-row{display:grid;grid-template-columns:280px repeat(9,1fr);gap:0;align-items:stretch;padding:8px 0;border-bottom:1px solid var(--line);position:relative;min-width:1000px}
+  .gantt-row:last-child{border-bottom:none}
+  .gantt-init{padding:8px 12px 8px 4px;display:flex;flex-direction:column;justify-content:center;gap:3px}
+  .gantt-init .name{font-size:13px;font-weight:600;color:var(--sf-deep);line-height:1.3}
+  .gantt-init .meta{font-size:11px;color:var(--n10);line-height:1.4}
+  .gantt-init .meta b{color:var(--sf-deep);font-weight:600}
+  .gantt-track{grid-column:2 / span 9;position:relative;height:100%;display:flex;align-items:center;padding:6px 14px 6px 0}
+  .gantt-bar{position:absolute;top:50%;transform:translateY(-50%);height:30px;border-radius:4px;display:flex;align-items:center;padding:0 12px;font-size:11.5px;font-weight:600;color:#fff;line-height:1.2;white-space:nowrap;overflow:visible;text-overflow:ellipsis;box-shadow:0 1px 2px rgba(8,7,7,.1)}
+  .gantt-bar > span:not(.milestone){overflow:hidden;text-overflow:ellipsis}
+  .gantt-bar.tac{background:var(--ok)}
+  .gantt-bar.strat{background:var(--sf-blue-active)}
+  .gantt-bar.regu{background:var(--err)}
+  .gantt-bar.vis{background:var(--af-violet)}
+  .gantt-bar .out{font-weight:400;opacity:.92;font-size:10.5px;margin-left:6px}
+  .gantt-bar .milestone{position:absolute;right:-5px;top:-5px;width:12px;height:12px;background:var(--gold);border-radius:50%;border:2px solid var(--n0);box-shadow:0 0 0 1px var(--gold-deep)}
+  .gantt-grid{position:absolute;top:0;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(9,1fr);pointer-events:none}
+  .gantt-grid span{border-left:1px solid var(--line);height:100%}
+  .gantt-grid span:first-child{border-left:none}
+  .gantt-grid span.qsep{border-left:1px solid var(--line-strong)}
+  .gantt-row .gantt-grid span{border-left-style:solid}
+
+  .gantt-legend{display:flex;flex-wrap:wrap;gap:14px;justify-content:flex-start;margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-size:11.5px;color:var(--n10)}
+  .gantt-legend .d{display:inline-flex;align-items:center;gap:6px;font-weight:500}
+  .gantt-legend .sw{width:18px;height:10px;border-radius:2px;display:inline-block}
+  .gantt-legend .ms{width:10px;height:10px;border-radius:50%;background:var(--gold);border:1.5px solid var(--gold-deep);display:inline-block}
+
+  /* ACTION PLAN */
+  .quarter{display:grid;grid-template-columns:96px 1fr;gap:0;margin-bottom:18px;border-radius:var(--radius-lg);overflow:hidden;background:var(--n0);border:1px solid var(--line)}
+  .q-name{background:var(--sf-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:18px;letter-spacing:.8px;font-family:var(--ff-display)}
+  .q-body{padding:18px 22px}
+  .q-body table{width:100%;border-collapse:collapse;font-size:12.5px}
+  .q-body th{text-align:left;padding:10px 12px;background:var(--n2);color:var(--sf-deep);font-size:10.5px;text-transform:uppercase;letter-spacing:1px;border-bottom:2px solid var(--sf-blue);font-weight:700}
+  .q-body td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.45}
+  .q-body tr:last-child td{border-bottom:none}
+  .q-body td b{color:var(--sf-deep)}
+  .horizon{background:var(--sf-navy);color:#fff;padding:20px 24px;border-radius:var(--radius);margin-bottom:16px;border-left:3px solid var(--sf-blue)}
+  .horizon h3{color:var(--sf-blue);margin-bottom:4px}
+  .horizon p{color:#ffffffb3;margin:0;font-size:13.5px}
+  .badge-tac{background:transparent;color:var(--ok);padding:2px 8px;border-radius:3px;font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;border:1px solid var(--ok)}
+  .badge-strat{background:transparent;color:var(--sf-blue-active);padding:2px 8px;border-radius:3px;font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;border:1px solid var(--sf-blue-active)}
+
+  /* === OPPORTUNITIES & RISKS === */
+  .opp-risk{background:var(--n0)}
+  .or-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .or-section h3{font-size:16px;margin-bottom:16px;color:var(--sf-deep)}
+  .or-list{display:flex;flex-direction:column;gap:12px}
+  .or-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+  .or-card .or-h{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .or-card .or-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+  .or-card.opp .or-icon{background:#d4f4dd;color:#1e7e34}
+  .or-card.risk .or-icon{background:#ffe5e5;color:#c92a2a}
+  .or-card .or-title{font-size:13px;font-weight:600;color:var(--sf-deep);flex:1}
+  .or-card .or-val{font-family:var(--ff-display);font-size:15px;font-weight:700;color:var(--sf-deep)}
+  .or-card .or-desc{font-size:12px;color:var(--n12);line-height:1.5}
+
+  @media (max-width:960px){
+    .or-grid{grid-template-columns:1fr}
+  }
+
+  /* === FOOTER === */
+  .footer{background:var(--sf-navy);color:#fff;padding:48px 0;text-align:center}
+  .footer .f-logo{font-size:13px;font-weight:600;letter-spacing:.5px;margin-bottom:12px;color:#ffffff99}
+  .footer .f-logo .cloud{display:inline-block;width:20px;height:15px;background:var(--sf-blue);border-radius:10px 10px 10px 2px;margin-right:6px;vertical-align:middle}
+  .footer .f-meta{font-size:11px;color:#ffffff66;line-height:1.8}
+  .footer .f-meta a{color:var(--sf-blue);text-decoration:none}
+  .footer .f-meta a:hover{text-decoration:underline}
+
+  /* === PROGRESS BAR === */
+  .progress-bar{position:fixed;top:0;left:0;width:100%;height:3px;background:transparent;z-index:100;pointer-events:none}
+  .progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--zurich-blue),var(--zurich-blue-light),var(--zurich-yellow));width:0;transition:width .2s}
+
+  /* === UTILITIES === */
+  .tag-pill{display:inline-block;padding:4px 10px;border-radius:12px;font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:700;background:var(--n3);color:var(--n10)}
+  .tag-pill.active{background:#d4f4dd;color:#1e7e34}
+  .tag-pill.risk{background:#ffe5e5;color:#c92a2a}
+  .tag-pill.warn{background:#fff4e6;color:#ca8a04}
+
+  /* === KEY METRICS HOVER === */
+  .metric-card{
+    text-align:center;
+    padding:20px 16px;
+    border-radius:var(--radius);
+    background:transparent;
+    border:1px solid transparent;
+    transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+  }
+  .metric-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg,transparent,rgba(72,112,198,0.1),transparent);
+    transition:left 0.5s ease;
+  }
+  .metric-card:hover::before{
+    left:100%;
+  }
+  .metric-card:hover{
+    background:var(--n0);
+    border:1px solid var(--sf-blue);
+    transform:translateY(-4px);
+    box-shadow:0 8px 24px rgba(35,54,111,0.12);
+  }
+  .metric-card .metric-value{
+    font-size:36px;
+    font-weight:700;
+    color:var(--sf-deep);
+    line-height:1;
+    margin-bottom:8px;
+    font-family:var(--ff-display);
+    transition:all 0.3s ease;
+  }
+  .metric-card:hover .metric-value{
+    color:var(--sf-blue);
+    transform:scale(1.05);
+  }
+  .metric-card .metric-label{
+    font-size:11px;
+    color:var(--n10);
+    text-transform:uppercase;
+    letter-spacing:1.2px;
+    font-weight:600;
+    line-height:1.4;
+    transition:color 0.3s ease;
+  }
+  .metric-card:hover .metric-label{
+    color:var(--sf-blue-active);
+  }
+  .metric-card .metric-desc{
+    font-size:11px;
+    color:var(--n12);
+    margin-top:4px;
+    line-height:1.3;
+    opacity:0.8;
+    transition:opacity 0.3s ease;
+  }
+  .metric-card:hover .metric-desc{
+    opacity:1;
+  }
+
+  /* === STAKEHOLDERS · MATRIZ POWER/INTEREST === */
+  .pi-wrap{margin-bottom:32px}
+  .pi-matrix{display:grid;grid-template-columns:48px 1fr 1fr;grid-template-rows:1fr 1fr 48px;gap:0;height:820px;background:var(--n0);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;position:relative}
+  .pi-axis-y{grid-column:1;grid-row:1 / span 2;background:var(--n2);display:flex;align-items:center;justify-content:center;border-right:1px solid var(--line);position:relative}
+  .pi-axis-y .lbl{writing-mode:vertical-rl;transform:rotate(180deg);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--n10);font-weight:600}
+  .pi-axis-y .arrow{position:absolute;top:14px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--sf-blue-active)}
+  .pi-axis-x{grid-column:2 / span 2;grid-row:3;background:var(--n2);display:flex;align-items:center;justify-content:center;border-top:1px solid var(--line);position:relative}
+  .pi-axis-x .lbl{font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--n10);font-weight:600}
+  .pi-axis-x .arrow{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--sf-blue-active)}
+  .pi-cell{padding:18px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;display:flex;flex-direction:column;gap:10px;overflow:hidden}
+  .pi-cell:nth-child(3),.pi-cell:nth-child(5){border-right:none}
+  .pi-cell.tl{background:linear-gradient(135deg,#fff 0%,#fef3c715 100%)}
+  .pi-cell.tr{background:linear-gradient(135deg,#fff 0%,#4870c610 100%)}
+  .pi-cell.bl{background:#fff}
+  .pi-cell.br{background:linear-gradient(135deg,#fff 0%,#a7e9aa10 100%)}
+  .pi-cell .qhead{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .pi-cell .qhead .qttl{font-family:var(--ff-display);font-size:13px;font-weight:600;color:var(--sf-deep);letter-spacing:-.1px;line-height:1.25}
+  .pi-cell .qhead .qttl small{display:block;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--n10);font-weight:600;margin-top:3px}
+  .pi-cell .qhead .qact{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;padding:3px 8px;border-radius:3px;white-space:nowrap}
+  .pi-cell.tl .qhead .qact{background:var(--warn);color:#fff}
+  .pi-cell.tr .qhead .qact{background:var(--sf-blue-active);color:#fff}
+  .pi-cell.bl .qhead .qact{background:var(--n10);color:#fff}
+  .pi-cell.br .qhead .qact{background:var(--ok);color:#fff}
+  .pi-people{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+  .pi-chip{display:inline-flex;align-items:center;gap:6px;background:var(--n0);border:1px solid var(--line);border-radius:999px;padding:4px 10px 4px 4px;font-size:11.5px;color:var(--sf-deep);font-weight:500}
+  .pi-chip .ch-av{width:22px;height:22px;border-radius:50%;background:var(--sf-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:700;letter-spacing:.3px}
+  .pi-chip.champ{border-color:var(--ok);background:#a7e9aa10}
+  .pi-chip.champ .ch-av{background:var(--ok)}
+  .pi-chip.target{border-color:var(--sf-blue);background:#4870c610}
+  .pi-chip.target .ch-av{background:var(--sf-blue-active)}
+  .pi-chip.risk{border-color:var(--warn);background:#fe933910}
+  .pi-chip.risk .ch-av{background:var(--warn);color:#fff}
+  .pi-chip b{font-weight:600}
+  .pi-chip span.role{color:var(--n10);font-weight:500;font-size:10.5px;margin-left:2px}
+
+  .pi-action{font-size:11.5px;color:var(--n12);line-height:1.5;background:#ffffffcc;border-radius:var(--radius);padding:8px 10px;border-left:2px solid var(--sf-blue)}
+  .pi-cell.tl .pi-action{border-color:var(--warn)}
+  .pi-cell.tr .pi-action{border-color:var(--sf-blue-active)}
+  .pi-cell.bl .pi-action{border-color:var(--n10)}
+  .pi-cell.br .pi-action{border-color:var(--ok)}
+  .pi-action b{color:var(--sf-deep)}
+
+  .pi-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:11.5px;color:var(--n10)}
+  .pi-legend .d{display:inline-flex;align-items:center;gap:6px;font-weight:500}
+
+  @media (max-width:1100px){
+    .pi-matrix{grid-template-columns:1fr;grid-template-rows:auto auto auto auto auto;height:auto}
+    .pi-axis-y,.pi-axis-x{display:none}
+    .pi-cell{border-right:none}
+  }
+
+  /* RISK REGISTER & ADOPTION TABLE */
+  .risk-tbl{width:100%;border-collapse:collapse;background:var(--n0);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:24px}
+  .risk-tbl thead th{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--n10);font-weight:600;text-align:left;padding:14px 16px;background:var(--n2);border-bottom:1px solid var(--line)}
+  .risk-tbl thead th.c{text-align:center}
+  .risk-tbl tbody td{padding:14px 16px;border-bottom:1px solid var(--line);font-size:13px;color:var(--n13);vertical-align:top;line-height:1.45}
+  .risk-tbl tbody tr:last-child td{border-bottom:none}
+  .risk-tbl .rid{font-family:var(--ff-display);font-weight:600;color:var(--sf-deep);font-size:13.5px;width:50px;text-align:center}
+  .risk-tbl .rname{font-weight:600;color:var(--sf-deep);font-size:13.5px;line-height:1.35}
+  .risk-tbl .rname small{display:block;font-weight:400;color:var(--n10);font-size:11.5px;margin-top:3px}
+  .risk-tbl .rsev{text-align:center;width:80px}
+  .risk-tbl .rscore{text-align:center;width:80px;font-family:var(--ff-display);font-weight:700;font-size:18px;letter-spacing:-.2px}
+  .risk-tbl .sev{display:inline-block;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;padding:3px 8px;border-radius:3px;color:#fff}
+  .risk-tbl .sev.h{background:var(--err)}
+  .risk-tbl .sev.m{background:var(--warn)}
+  .risk-tbl .sev.l{background:var(--ok)}
+  .risk-tbl .rmit{font-size:12.5px;color:var(--n12);line-height:1.5}
+  .risk-tbl .rmit b{color:var(--sf-deep)}
+  .risk-tbl .rown{font-size:11.5px;color:var(--n10)}
+  .risk-tbl .rown b{color:var(--sf-deep);display:block}
+  .risk-tbl tr.high{background:#fe5c4c08}
+  .risk-tbl tr.high .rscore{color:var(--err)}
+  .risk-tbl tr.med .rscore{color:var(--warn)}
+  .risk-tbl tr.low .rscore{color:var(--ok)}
+
+  .risk-meter{display:inline-flex;gap:2px;justify-content:center;margin-top:4px}
+  .risk-meter span{width:6px;height:14px;background:var(--n3);border-radius:1px}
+  .risk-meter span.on{background:currentColor}
+  .risk-tbl tr.high .risk-meter{color:var(--err)}
+  .risk-tbl tr.med .risk-meter{color:var(--warn)}
+  .risk-tbl tr.low .risk-meter{color:var(--ok)}
+
+  /* === DOT RAIL (Scroll Progress Indicator) === */
+  .dot-rail{position:fixed;top:50%;right:18px;transform:translateY(-50%);z-index:45;display:flex;flex-direction:column;gap:10px;padding:14px 10px;background:#23366f60;backdrop-filter:saturate(180%) blur(6px);border:1px solid #ffffff14;border-radius:24px;transition:.25s ease}
+  .dot-rail:hover,.dot-rail.expanded{background:var(--sf-navy);border-color:#ffffff28;padding:14px 14px}
+  .dot-rail a{position:relative;display:flex;align-items:center;justify-content:flex-end;gap:10px;padding:0;text-decoration:none;color:#ffffff80;font-size:11px;font-weight:600;letter-spacing:.3px;line-height:1;height:14px}
+  .dot-rail a .dr-dot{width:7px;height:7px;border-radius:50%;background:#ffffff40;border:1px solid #ffffff60;flex-shrink:0;transition:.2s ease;order:2}
+  .dot-rail a .dr-lbl{opacity:0;max-width:0;overflow:hidden;white-space:nowrap;transition:.25s ease;order:1;text-align:right;transform:translateX(6px)}
+  .dot-rail:hover a .dr-lbl,.dot-rail.expanded a .dr-lbl{opacity:1;max-width:160px;transform:translateX(0)}
+  .dot-rail a:hover{color:#fff}
+  .dot-rail a:hover .dr-dot{background:var(--sf-blue);border-color:var(--sf-blue);box-shadow:0 0 0 3px #4870c620}
+  .dot-rail a.active{color:#fff}
+  .dot-rail a.active .dr-dot{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 3px #fde62e25;width:9px;height:9px}
+  @media (max-width:1100px){.dot-rail{display:none}}
+  @media print{.dot-rail{display:none}}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar"><div class="progress-bar-fill" id="progressBar"></div></div>
+
+<!-- Dot Rail (Scroll Indicator) -->
+<nav class="dot-rail" id="dotRail" aria-label="Mapa de secciones">
+  <a href="#context" data-rail="context"><span class="dr-lbl">Contexto</span><span class="dr-dot" aria-hidden="true"></span></a>
+  <a href="#action" data-rail="action"><span class="dr-lbl">Plan de Acción</span><span class="dr-dot" aria-hidden="true"></span></a>
+  <a href="#stakeholders" data-rail="stakeholders"><span class="dr-lbl">Stakeholders</span><span class="dr-dot" aria-hidden="true"></span></a>
+  <a href="#partners" data-rail="partners"><span class="dr-lbl">Partners</span><span class="dr-dot" aria-hidden="true"></span></a>
+  <a href="#footprint" data-rail="footprint"><span class="dr-lbl">Footprint y Consumo</span><span class="dr-dot" aria-hidden="true"></span></a>
+  <a href="#opportunities" data-rail="opportunities"><span class="dr-lbl">Opportunities & Risks</span><span class="dr-dot" aria-hidden="true"></span></a>
+</nav>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="cloud"></span>
+      <span>Salesforce × Zurich Chile</span>
+      <span class="nav-sep"></span>
+      <b>Strategic Account Plan FY27</b>
+    </div>
+    <div class="nav-spacer"></div>
+    <div class="nav-links">
+      <a href="#context">Contexto</a>
+      <a href="#action">Plan de Acción</a>
+      <a href="#stakeholders">Stakeholders</a>
+      <a href="#partners">Partners</a>
+      <a href="#footprint">Footprint y Consumo</a>
+      <a href="#opportunities">Opportunities & Risks</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">FY27 Strategic Account Plan</div>
+    <h1>Zurich Chile: <span class="accent">Industrialización agéntica</span> del asegurador más innovador de LATAM</h1>
+    <p class="lede">
+      De TobIAs (primer agente en producción con 85% de resolución autónoma) a una <b>plataforma agéntica empresarial</b> que transforma ventas, retención y operaciones con IA gobernada, conectada a la verdad del negocio y lista para escalar globalmente.
+    </p>
+    <div style="text-align:left;padding:48px 0 32px 0;font-size:15px;color:#ffffff99;font-weight:600;letter-spacing:0.3px;">
+      <strong style="color:#fff">Equipo Comercial, Soluciones y Arquitectura - Salesforce Chile</strong>
+    </div>
+    <div class="toc">
+      <a href="#context"><span class="num">00</span>Contexto</a>
+      <a href="#action"><span class="num">01</span>Plan de Acción</a>
+      <a href="#stakeholders"><span class="num">02</span>Stakeholders</a>
+      <a href="#partners"><span class="num">03</span>Partners</a>
+      <a href="#footprint"><span class="num">04</span>Footprint y Consumo</a>
+      <a href="#opportunities"><span class="num">05</span>Opportunities & Risks</a>
+    </div>
+
+    <!-- Partner Logos -->
+    <div class="hero-logos">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Zurich_Insurance_Group_Logo_Horizontal.svg/1920px-Zurich_Insurance_Group_Logo_Horizontal.svg.png" alt="Zurich Insurance Group" class="logo-zurich">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/1280px-Salesforce.com_logo.svg.png" alt="Salesforce" class="logo-salesforce">
+    </div>
+  </div>
+</header>
+
+<!-- Headline Story + Win Theme -->
+<section class="headline">
+  <div class="wrap">
+    <div class="hl-main">
+      <div class="stamp">HEADLINE STORY</div>
+      <div class="story">
+        Zurich Chile lidera <em>IA en seguros LATAM</em> con TobIAs en producción. Ahora <u>industrializamos agentes</u> para transformar de "pagador de siniestros" a <em>partner de prevención</em> y alcanzar visión 2030 Net-Zero + ROE >23%.
+      </div>
+      <div class="lede">
+        <b>La oportunidad:</b> CEO Jerónimo Ares (ex-CFO, 2026) lidera transformación con 4 pilares estratégicos: Innovación/Digital, Liderazgo ESG (#1 sustentabilidad Chile), Cliente "Más Humano" (productos modulares/preventivos), y Core ROE >23%. Salesforce es el único partner tecnológico que conecta <b>Data + Trust + Agentforce</b> para ejecutar esta visión. TobIAs demostró ROI ($479K/año, NPS +23, -10% calls). Ahora escalamos con <b>6 agentes P1 (Quick Wins)</b> hacia industrialización completa. Zurich posicionado como "The Smarter, Greener Alternative" vs. competencia (HDI, SURA, BCI) que compite por volumen. Momento crítico: 2026 = año de operacionalizar AI en industria de seguros.
+      </div>
+
+      <!-- 4 Métricas Clave Zurich -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px;padding-top:28px;border-top:1px solid var(--line)">
+        <div class="metric-card">
+          <div class="metric-value">$488M</div>
+          <div class="metric-label">Facturación Anual</div>
+          <div class="metric-desc">USD · ~1,900 empleados</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">AA+</div>
+          <div class="metric-label">Rating Feller Rate</div>
+          <div class="metric-desc">Mejor clasificación Chile</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">60/40</div>
+          <div class="metric-label">Mix Vida/Generales</div>
+          <div class="metric-desc">Líder seguros protección</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">>23%</div>
+          <div class="metric-label">Target Core ROE</div>
+          <div class="metric-desc">Mandato CEO Ares FY27</div>
+        </div>
+      </div>
+    </div>
+    <div class="win-theme">
+      <div class="wt-h">WIN THEME</div>
+      <div class="wt-claim">
+        "Agentes que actúan, fundamentados en la verdad del negocio, gobernados end-to-end, escalables globalmente."
+      </div>
+      <div class="wt-pillars">
+        <div class="wt-p">
+          <div class="n">Probado</div>
+          <div class="v">TobIAs live 85% autonomía</div>
+        </div>
+        <div class="wt-p">
+          <div class="n">Completo</div>
+          <div class="v">Data + Trust + Agent + CRM</div>
+        </div>
+        <div class="wt-p">
+          <div class="n">Global</div>
+          <div class="v">Replicable a Zurich LATAM/Global</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Executive Summary BLUF -->
+<section class="exec" id="bluf">
+  <div class="wrap">
+    <div class="exec-head">
+      <div class="left">
+        <div class="stamp">EXECUTIVE SUMMARY</div>
+        <h2>BLUF: Bottom Line Up Front</h2>
+      </div>
+      <div class="right">
+        <b>Método SCQA</b>
+        Situation → Complication → Question → Answer<br>
+        Framework para decisiones estratégicas ejecutivas.
+      </div>
+    </div>
+    <div class="scqa">
+      <div class="scqa-cell s">
+        <div class="tag"><span class="num">S</span> SITUACIÓN</div>
+        <div class="hd">Zurich Chile lidera IA en seguros LATAM con mandato CEO transformacional</div>
+        <ul>
+          <li><b>TobIAs en producción</b> desde Abril 2026: 85% resolución autónoma, NPS +23, $479K/año savings</li>
+          <li><b>CEO Jerónimo Ares (ex-CFO)</b> asumió en 2026 con mandato: Core ROE >23%, Net-Zero 2030, Líder ESG Chile</li>
+          <li><b>4 pilares estratégicos:</b> Innovación/Digital (AI + Data Governance), Sostenibilidad ESG, Cliente "Más Humano", Eficiencia Operacional</li>
+          <li><b>Posicionamiento único:</b> "The Smarter, Greener Alternative" — compite por segmento digital + ético, no por volumen</li>
+          <li><b>$488M USD revenue</b>, 1,900 empleados, AA+ rating (mejor Chile), 60/40 Vida/Generales mix</li>
+        </ul>
+      </div>
+      <div class="scqa-cell c">
+        <div class="tag"><span class="num">C</span> COMPLICACIÓN</div>
+        <div class="hd">Presiones competitivas, regulatorias y operacionales convergen en 2026</div>
+        <ul>
+          <li><b>Competencia AI acelerada:</b> HDI, SURA, BCI escalando AI; 2026 = año de operacionalizar (Account 360: "pilotos acabaron")</li>
+          <li><b>Transición SBR (Solvencia Basada en Riesgo):</b> CMF exige gestión de capital sofisticada + reporting alta precisión desde legacy</li>
+          <li><b>Protection Gap:</b> Solo 1 de 3 vehículos tiene seguro integral; mercado hipotecario débil = oportunidad subAsegurados no detectada</li>
+          <li><b>Secondary Perils:</b> Incendios forestales + aluviones con frecuencia creciente = modelos actuariales desactualizados</li>
+          <li><b>Riesgo "vendor fatigue":</b> CEO ROI-focused (ex-CFO); SF debe demostrar "innovation partner" vs. solo CRM database</li>
+        </ul>
+      </div>
+      <div class="scqa-cell q">
+        <div class="tag"><span class="num">Q</span> PREGUNTA</div>
+        <div class="hd">¿Cómo industrializar IA para multiplicar impacto TobIAs?</div>
+        <ul>
+          <li><b>Escalar agentes:</b> ¿Cómo pasar de 1 agente (TobIAs) a 33 sin explotar complejidad técnica?</li>
+          <li><b>Unificar datos:</b> ¿Cómo crear Customer 360 real desde 8 sistemas legacy?</li>
+          <li><b>Acelerar ROI:</b> ¿Cuáles Quick Wins (P1) entregar en 3-6 meses para mantener momentum?</li>
+          <li><b>Gobernar IA:</b> ¿Cómo garantizar trust, compliance, explicabilidad a escala?</li>
+          <li><b>Replicar global:</b> ¿Cómo convertir Zurich Chile en showcase para LATAM/Global?</li>
+        </ul>
+      </div>
+      <div class="scqa-cell a">
+        <div class="tag"><span class="num">A</span> RESPUESTA</div>
+        <div class="hd">Roadmap de industrialización agéntica FY27</div>
+        <ul>
+          <li><b>Q2 FY27:</b> Deploy 6 agentes P1 (Perfilamiento, Renovación, Claims, Cross-sell) — $370K-570K Flex Credits/mes</li>
+          <li><b>Q3 FY27:</b> Data Cloud 360 unificado (AS/400 + legacy integration), Trust Layer config</li>
+          <li><b>Q4 FY27:</b> Escalar a P2-P3 (15 agentes), habilitar ventas agénticas, broker/partner enablement</li>
+          <li><b>FY28:</b> Full portfolio 33 agentes, Global Business Case, Dreamforce showcase</li>
+          <li><b>Inversión estimada:</b> $2.8M-4.2M año 1, ROI proyectado 340% (basado en TobIAs)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Strategic Milestones -->
+    <div style="margin-top:48px;background:linear-gradient(135deg,#23366f 0%,#2167ae 100%);border-radius:var(--radius-lg);padding:32px 36px;border-left:4px solid var(--gold)">
+      <h3 style="color:var(--gold);margin:0 0 24px;font-size:15px;letter-spacing:2px;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:12px">
+        <span style="font-size:20px">🎯</span> 4 Hitos Estratégicos FY27
+      </h3>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
+        <!-- Hito 1 -->
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:var(--radius);padding:20px 22px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--sf-navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0">1</div>
+            <h4 style="color:#fff;margin:0;font-size:14px;font-weight:600;line-height:1.3">Relacionamiento Ejecutivo con la Cuenta</h4>
+          </div>
+          <p style="font-size:12.5px;color:#ffffffcc;line-height:1.6;margin:0">
+            <b style="color:#fff">CEO, COO, CIO, Customer Office.</b> Establecer cadencia trimestral de executive briefings, acceso directo a Salesforce leadership LATAM, y co-creation workshops para alinear roadmap tecnológico con pilares estratégicos de Zurich.
+          </p>
+        </div>
+
+        <!-- Hito 2 -->
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:var(--radius);padding:20px 22px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--sf-navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0">2</div>
+            <h4 style="color:#fff;margin:0;font-size:14px;font-weight:600;line-height:1.3">Expansión TobIAs a toda la empresa</h4>
+          </div>
+          <p style="font-size:12.5px;color:#ffffffcc;line-height:1.6;margin:0">
+            <b style="color:#fff">Website → Sales, Brokers, FNOL.</b> CEO Priority explícita + ventana de momentum post-producción que hay que capitalizar <u>ahora</u>. Escalar de customer service a operaciones críticas de negocio con arquitectura agéntica probada.
+          </p>
+        </div>
+
+        <!-- Hito 3 -->
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:var(--radius);padding:20px 22px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--sf-navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0">3</div>
+            <h4 style="color:#fff;margin:0;font-size:14px;font-weight:600;line-height:1.3">Data Cloud de "activo" a motor estratégico</h4>
+          </div>
+          <p style="font-size:12.5px;color:#ffffffcc;line-height:1.6;margin:0">
+            <b style="color:#fff">Ley 21.719 + Protection Gap Detection.</b> Disparadores perfectos para activar Data Cloud como intelligence layer del negocio. Habilitar evolución agéntica con Customer 360 real y decisiones fundamentadas en la verdad del dato.
+          </p>
+        </div>
+
+        <!-- Hito 4 -->
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:var(--radius);padding:20px 22px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--sf-navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0">4</div>
+            <h4 style="color:#fff;margin:0;font-size:14px;font-weight:600;line-height:1.3">Dreamforce 2026 — Case Study Global</h4>
+          </div>
+          <p style="font-size:12.5px;color:#ffffffcc;line-height:1.6;margin:0">
+            <b style="color:#fff">Geocze respondió positivamente.</b> Confirmar antes del 20 de junio y posicionar a Zurich Chile como case study global en Insurance Executive Track. Showcase de industrialización agéntica ante mercado LATAM/Global.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Market Context -->
+<section class="alt" id="context">
+  <div class="wrap">
+    <span class="section-no">00 · CONTEXTO</span>
+    <h2>Zurich Chile: Radiografía Estratégica 2024-2026</h2>
+    <p class="h2-sub">
+      Transformación estratégica hacia la rentabilidad técnica y los seguros de protección, con clasificación AA+ y visión 2026 centrada en industrialización de IA, expansión en MiPyMEs y Ciberseguridad.
+    </p>
+
+    <!-- Performance Financiero -->
+    <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 32px;margin-bottom:32px;box-shadow:var(--shadow-lg)">
+      <h3 style="color:var(--sf-deep);margin:0 0 24px;font-size:16px;display:flex;align-items:center;gap:10px">
+        <span style="font-size:24px">📊</span> Desempeño Financiero y Estructura del Negocio
+      </h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+        <div style="background:var(--n1);border-radius:var(--radius);padding:20px;border-left:4px solid var(--sf-blue)">
+          <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px;font-weight:600">Seguros de Vida</div>
+          <div style="font-size:36px;font-weight:700;color:var(--sf-deep);line-height:1;margin-bottom:6px">60%</div>
+          <div style="font-size:12px;color:var(--n10);line-height:1.5">Portafolio dominante (individual + colectiva), crecimiento del 10%</div>
+        </div>
+        <div style="background:var(--n1);border-radius:var(--radius);padding:20px;border-left:4px solid var(--sf-blue-active)">
+          <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px;font-weight:600">Seguros Generales</div>
+          <div style="font-size:36px;font-weight:700;color:var(--sf-deep);line-height:1;margin-bottom:6px">40%</div>
+          <div style="font-size:12px;color:var(--n10);line-height:1.5">Primas $220,150M+ con vehículos motorizados + hogar como foco estratégico</div>
+        </div>
+        <div style="background:var(--n1);border-radius:var(--radius);padding:20px;border-left:4px solid var(--gold-deep)">
+          <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px;font-weight:600">Clasificación Riesgo</div>
+          <div style="font-size:36px;font-weight:700;color:var(--sf-deep);line-height:1;margin-bottom:6px">AA+</div>
+          <div style="font-size:12px;color:var(--n10);line-height:1.5">Rating Feller Rate, mejor de Chile. Rango AA a AA+</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mejoras en Índices Operacionales -->
+    <div style="background:#e8f1fc;border:1px solid #c4daf7;border-radius:var(--radius-lg);padding:24px 28px;margin-bottom:32px">
+      <h3 style="color:var(--sf-deep);margin:0 0 20px;font-size:15px;font-weight:600">📈 Mejora en Índices de Siniestralidad</h3>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+            <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2167ae,#4870c6);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;font-weight:700">71%</div>
+            <div>
+              <div style="font-size:13px;font-weight:600;color:var(--sf-deep)">Seguros de Salud</div>
+              <div style="font-size:11px;color:var(--n10)">Índice de siniestralidad optimizado</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+            <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2167ae,#4870c6);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;font-weight:700">67%</div>
+            <div>
+              <div style="font-size:13px;font-weight:600;color:var(--sf-deep)">Segmento Automotriz</div>
+              <div style="font-size:11px;color:var(--n10)">Best-in-class del mercado chileno</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Posición Competitiva -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px">
+      <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)">
+        <h3 style="color:var(--sf-deep);margin:0 0 18px;font-size:15px">Posición Competitiva Chile</h3>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--n1);border-radius:6px">
+            <div>
+              <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1px;font-weight:600">Clasificación</div>
+              <div style="font-size:14px;font-weight:600;color:var(--sf-deep)">AA+ (Feller Rate)</div>
+            </div>
+            <div style="font-size:11px;color:var(--n10)">Rango: AA a AA+</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--n1);border-radius:6px">
+            <div>
+              <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1px;font-weight:600">Market Share</div>
+              <div style="font-size:14px;font-weight:600;color:var(--sf-deep)">4.9%</div>
+            </div>
+            <div style="font-size:11px;color:var(--n10)">Mercado Chileno</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--n1);border-radius:6px">
+            <div>
+              <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1px;font-weight:600">Foco Estratégico</div>
+              <div style="font-size:14px;font-weight:600;color:var(--sf-deep)">Rentabilidad y Salud</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)">
+        <h3 style="color:var(--sf-deep);margin:0 0 18px;font-size:15px">Ventajas Competitivas</h3>
+        <ul style="list-style:none;margin:0;padding:0;font-size:13px;color:var(--n12);line-height:1.8">
+          <li style="margin-bottom:10px;padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--ok);font-weight:700;font-size:16px">✓</span> <b>IA en producción:</b> TobIAs único agente autónomo live en Chile (85% resolución)</li>
+          <li style="margin-bottom:10px;padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--ok);font-weight:700;font-size:16px">✓</span> <b>Rating AA+:</b> Mejor clasificación risk-based del mercado</li>
+          <li style="margin-bottom:10px;padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--ok);font-weight:700;font-size:16px">✓</span> <b>Liderazgo Vida:</b> 60% portafolio en seguros de protección</li>
+          <li style="margin-bottom:10px;padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--ok);font-weight:700;font-size:16px">✓</span> <b>Siniestralidad optimizada:</b> 71% Salud, 67% Auto (best-in-class)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Visión CEO Jerónimo Ares -->
+    <div style="background:linear-gradient(135deg,#23366f 0%,#2167ae 100%);border-radius:var(--radius-lg);padding:32px 36px;color:#fff;margin-bottom:32px">
+      <h3 style="color:var(--gold);margin:0 0 16px;font-size:16px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:12px">
+        <span style="font-size:28px">👤</span> Visión del CEO — Jerónimo Ares
+      </h3>
+      <p style="font-size:13.5px;color:#ffffffcc;line-height:1.7;margin:0 0 24px">
+        Ares asumió en 2026 con <b style="color:#fff">mandato de eficiencia operacional + agenda de sostenibilidad</b>. Background de CFO = aprecia ROI de estrategia cloud-first. 4 pilares estratégicos:
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px">
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:var(--radius);padding:18px 20px;border-left:3px solid var(--gold)">
+          <h4 style="color:var(--gold);margin:0 0 10px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;font-weight:700">1. Innovación y Transformación Digital</h4>
+          <p style="font-size:13px;color:#ffffffcc;line-height:1.6;margin:0">
+            Automatización del customer journey; seguridad de datos por encima del mínimo legal. 2026 = año de operacionalizar AI.
+          </p>
+        </div>
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:var(--radius);padding:18px 20px;border-left:3px solid var(--gold)">
+          <h4 style="color:var(--gold);margin:0 0 10px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;font-weight:700">2. Liderazgo en Sostenibilidad (ESG)</h4>
+          <p style="font-size:13px;color:#ffffffcc;line-height:1.6;margin:0">
+            Ser el asegurador más sostenible de Chile; mantener ranking Brinca-UAI 2025; fondos ESG como ventaja competitiva. Net-Zero 2030.
+          </p>
+        </div>
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:var(--radius);padding:18px 20px;border-left:3px solid var(--gold)">
+          <h4 style="color:var(--gold);margin:0 0 10px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;font-weight:700">3. Foco en el Cliente ("Más Humano")</h4>
+          <p style="font-size:13px;color:#ffffffcc;line-height:1.6;margin:0">
+            Productos modulares y preventivos; cultura de servicio empático. De "pagador" a "partner" en prevención de riesgos.
+          </p>
+        </div>
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:var(--radius);padding:18px 20px;border-left:3px solid var(--gold)">
+          <h4 style="color:var(--gold);margin:0 0 10px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;font-weight:700">4. Eficiencia y Crecimiento Sostenido</h4>
+          <p style="font-size:13px;color:#ffffffcc;line-height:1.6;margin:0">
+            <b style="color:#fff">Core ROE >23%</b>; resiliencia ante volatilidad latinoamericana. ROI-focused en cada inversión tecnológica.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visión Estratégica 2026 -->
+    <div style="background:linear-gradient(135deg,#23366f 0%,#2167ae 100%);border-radius:var(--radius-lg);padding:32px 36px;color:#fff">
+      <h3 style="color:var(--gold);margin:0 0 24px;font-size:16px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:12px">
+        <span style="font-size:28px">🎯</span> Objetivos Estratégicos 2026–2030
+      </h3>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:28px">
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:var(--radius);padding:18px 20px">
+          <h4 style="color:var(--gold);margin:0 0 10px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;font-weight:700">Corto Plazo (2026-2027)</h4>
+          <p style="font-size:13px;color:#ffffffcc;line-height:1.6;margin:0">
+            Transformación Operacional con IA; reducir fricción interna y acelerar liquidación de siniestros. Consolidar posición ESG #1. Migrar a seguros modulares y soluciones preventivas de salud.
+          </p>
+        </div>
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:var(--radius);padding:18px 20px">
+          <h4 style="color:var(--gold);margin:0 0 10px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;font-weight:700">Largo Plazo (Hacia 2030)</h4>
+          <p style="font-size:13px;color:#ffffffcc;line-height:1.6;margin:0">
+            <b style="color:#fff">Net-Zero Operations by 2030</b> — Eliminar huella de carbono operacional; flota 100% eléctrica. Transformar identidad: Zurich como partner de vida en prevención, no solo "pagador".
+          </p>
+        </div>
+      </div>
+
+      <div style="background:#ffffff08;border:1px solid var(--gold);border-radius:var(--radius);padding:24px 26px;border-left:4px solid var(--gold)">
+        <h4 style="color:#fff;margin:0 0 14px;font-size:14px;font-weight:600">Focos Estratégicos 2026</h4>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px">
+          <div style="display:flex;align-items:start;gap:12px">
+            <div style="width:28px;height:28px;border-radius:6px;background:var(--gold);color:var(--sf-navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">1</div>
+            <div>
+              <div style="font-size:12.5px;font-weight:600;color:#fff;margin-bottom:4px">MiPyMEs + Ciberseguridad</div>
+              <div style="font-size:11.5px;color:#ffffffb3;line-height:1.5">Expansión en segmentos colectivos PyME bajo estándares regulatorios actuales</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:start;gap:12px">
+            <div style="width:28px;height:28px;border-radius:6px;background:var(--gold);color:var(--sf-navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">2</div>
+            <div>
+              <div style="font-size:12.5px;font-weight:600;color:#fff;margin-bottom:4px">Industrialización Agéntica</div>
+              <div style="font-size:11.5px;color:#ffffffb3;line-height:1.5">IA conectada a la verdad del negocio: Data + Trust + Agentforce end-to-end</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Vectores Estructurales -->
+    <div style="margin-top:40px;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px 36px;box-shadow:var(--shadow-lg)">
+      <h3 style="color:var(--sf-deep);margin:0 0 8px;font-size:18px;font-weight:600;display:flex;align-items:center;gap:12px">
+        <span style="font-size:28px">🎯</span> 3 Vectores que Mueven KPIs Estructurales
+      </h3>
+      <p style="font-size:13px;color:var(--n10);margin:0 0 28px;line-height:1.5">Gap actual → Palanca IA Salesforce → Benchmark industria</p>
+
+      <!-- Vector 1: Eficiencia Operacional -->
+      <div style="border:1px solid var(--line);border-radius:var(--radius);margin-bottom:20px;overflow:hidden">
+        <div style="background:var(--sf-navy);color:#fff;padding:14px 20px;display:flex;align-items:center;gap:12px">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--sf-navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;flex-shrink:0">1</div>
+          <h4 style="margin:0;font-size:15px;font-weight:600">Eficiencia Operacional — Cost per Case & Handle Time</h4>
+        </div>
+        <div style="padding:24px">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+            <!-- Gap -->
+            <div style="background:var(--n1);border-radius:var(--radius);padding:18px;border-left:3px solid #f2c3e0">
+              <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--n10);font-weight:700;margin-bottom:10px">🔴 GAP ACTUAL</div>
+              <div style="font-size:13px;color:var(--n12);line-height:1.7">
+                <b style="display:block;color:var(--sf-deep);margin-bottom:8px">$2.92 cost per case</b>
+                • 12 semanas onboarding agentes<br>
+                • 20% tiempo ejecutivos en tareas manuales<br>
+                • 28% churn rate (vs 18% industria)<br>
+                • Procesos manuales en reconciliación, claims routing, policy updates
+              </div>
+            </div>
+            <!-- Palanca IA -->
+            <div style="background:var(--n1);border-radius:var(--radius);padding:18px;border-left:3px solid var(--sf-blue)">
+              <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sf-blue);font-weight:700;margin-bottom:10px">⚡ PALANCA IA SALESFORCE</div>
+              <div style="font-size:13px;color:var(--n12);line-height:1.7">
+                <b style="display:block;color:var(--sf-deep);margin-bottom:8px">Agentforce + Data Cloud</b>
+                • <b>P1 Agents:</b> Perfilamiento, Renovación, Claims, Cross-sell (85% autonomía)<br>
+                • <b>Onboarding Agent:</b> Reducir 12w → 6w (-50%)<br>
+                • <b>Data Cloud 360:</b> Eliminar reconciliación manual, churn prediction<br>
+                • <b>Flex Credits governance:</b> Escala elástica sin headcount
+              </div>
+            </div>
+            <!-- Benchmark -->
+            <div style="background:var(--n1);border-radius:var(--radius);padding:18px;border-left:3px solid var(--ok)">
+              <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ok);font-weight:700;margin-bottom:10px">✅ BENCHMARK INDUSTRIA</div>
+              <div style="font-size:13px;color:var(--n12);line-height:1.7">
+                <b style="display:block;color:var(--sf-deep);margin-bottom:8px">$1.46 cost per case (-50%)</b>
+                • <b>Best-in-class:</b> 6 semanas onboarding<br>
+                • <b>Churn:</b> 18-22% (insurtech LATAM)<br>
+                • <b>Automation:</b> 70% queries resueltas sin intervención humana<br>
+                • <b>TobIAs baseline:</b> $479K/año savings (1 agente)
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:16px;padding:12px 16px;background:#e8f1fc;border-radius:6px;border-left:3px solid var(--sf-blue)">
+            <div style="font-size:11.5px;color:var(--sf-deep);line-height:1.6">
+              <b>💰 ROI Proyectado:</b> -40% call volume, -50% onboarding time → <b>$2.8M savings anuales</b> (6 agentes P1) | Target: alcanzar benchmark $1.46/case en Q4 FY27
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vector 2: Revenue Growth & Cross-sell -->
+      <div style="border:1px solid var(--line);border-radius:var(--radius);margin-bottom:20px;overflow:hidden">
+        <div style="background:var(--sf-navy);color:#fff;padding:14px 20px;display:flex;align-items:center;gap:12px">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--sf-navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;flex-shrink:0">2</div>
+          <h4 style="margin:0;font-size:15px;font-weight:600">Crecimiento Revenue — Cross-sell & Conversion Rate</h4>
+        </div>
+        <div style="padding:24px">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+            <!-- Gap -->
+            <div style="background:var(--n1);border-radius:var(--radius);padding:18px;border-left:3px solid #f2c3e0">
+              <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--n10);font-weight:700;margin-bottom:10px">🔴 GAP ACTUAL</div>
+              <div style="font-size:13px;color:var(--n12);line-height:1.7">
+                <b style="display:block;color:var(--sf-deep);margin-bottom:8px">20% lead conversion</b>
+                • <b>45K clientes</b> low-segment desatendidos (sin touch comercial)<br>
+                • 40% clientes con <b>cross-sell potential</b> sin activar (Vida + Generales)<br>
+                • 1.25M leads/año sin scoring predictivo<br>
+                • Brokers (1,400) sin herramientas digitales: quotes manuales, -70% friction
+              </div>
+            </div>
+            <!-- Palanca IA -->
+            <div style="background:var(--n1);border-radius:var(--radius);padding:18px;border-left:3px solid var(--sf-blue)">
+              <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sf-blue);font-weight:700;margin-bottom:10px">⚡ PALANCA IA SALESFORCE</div>
+              <div style="font-size:13px;color:var(--n12);line-height:1.7">
+                <b style="display:block;color:var(--sf-deep);margin-bottom:8px">Agent Ventas + Einstein Scoring</b>
+                • <b>Cross-sell Agent:</b> Recomendaciones contextuales basadas en life events (Customer 360)<br>
+                • <b>Lead Scoring:</b> Priorización 1.25M leads con propensión predictiva<br>
+                • <b>Broker Portal IA:</b> Self-service quotes + agente ventas embebido<br>
+                • <b>Low-segment activation:</b> Campaigns automatizadas para 45K clientes
+              </div>
+            </div>
+            <!-- Benchmark -->
+            <div style="background:var(--n1);border-radius:var(--radius);padding:18px;border-left:3px solid var(--ok)">
+              <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ok);font-weight:700;margin-bottom:10px">✅ BENCHMARK INDUSTRIA</div>
+              <div style="font-size:13px;color:var(--n12);line-height:1.7">
+                <b style="display:block;color:var(--sf-deep);margin-bottom:8px">28-32% lead conversion</b>
+                • <b>Cross-sell rate:</b> 18-22% (insurtech con IA)<br>
+                • <b>Time to quote:</b> -70% con portales digitales<br>
+                • <b>Long tail monetization:</b> 60-70% segmentos low-value activados<br>
+                • <b>Broker NPS:</b> +40 con tools digitales vs. +15 procesos manuales
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:16px;padding:12px 16px;background:#e8f1fc;border-radius:6px;border-left:3px solid var(--sf-blue)">
+            <div style="font-size:11.5px;color:var(--sf-deep);line-height:1.6">
+              <b>💰 ROI Proyectado:</b> +18% cross-sell, 20% → 28% conversion rate → <b>$8M-12M revenue incremental</b> | Target: activar 45K low-segment + 1,400 brokers habilitados Q3 FY27
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vector 3: Customer Experience & Retention -->
+      <div style="border:1px solid var(--line);border-radius:var(--radius);overflow:hidden">
+        <div style="background:var(--sf-navy);color:#fff;padding:14px 20px;display:flex;align-items:center;gap:12px">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--sf-navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;flex-shrink:0">3</div>
+          <h4 style="margin:0;font-size:15px;font-weight:600">Customer Experience — NPS & Churn Rate</h4>
+        </div>
+        <div style="padding:24px">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+            <!-- Gap -->
+            <div style="background:var(--n1);border-radius:var(--radius);padding:18px;border-left:3px solid #f2c3e0">
+              <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--n10);font-weight:700;margin-bottom:10px">🔴 GAP ACTUAL</div>
+              <div style="font-size:13px;color:var(--n12);line-height:1.7">
+                <b style="display:block;color:var(--sf-deep);margin-bottom:8px">NPS +23 (TobIAs baseline)</b>
+                • <b>28% churn</b> vs. 18% benchmark insurtech<br>
+                • Renovaciones reactivas (sin outreach proactivo pre-vencimiento)<br>
+                • FNOL manual: 48-72h resolution vs. 24h benchmark<br>
+                • Silos de datos: cliente contacta 3+ veces para mismo issue (no hay Customer 360)
+              </div>
+            </div>
+            <!-- Palanca IA -->
+            <div style="background:var(--n1);border-radius:var(--radius);padding:18px;border-left:3px solid var(--sf-blue)">
+              <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sf-blue);font-weight:700;margin-bottom:10px">⚡ PALANCA IA SALESFORCE</div>
+              <div style="font-size:13px;color:var(--n12);line-height:1.7">
+                <b style="display:block;color:var(--sf-deep);margin-bottom:8px">Agentforce + Customer 360</b>
+                • <b>Renovación Agent:</b> Outreach proactivo 30 días pre-vencimiento con oferta personalizada<br>
+                • <b>FNOL Agent:</b> Triage automático, routing inteligente, 24h target resolution<br>
+                • <b>Data Cloud 360:</b> Vista unificada (1.3M profiles) elimina re-work<br>
+                • <b>Churn prediction:</b> Modelo ML identifica at-risk 90 días antes
+              </div>
+            </div>
+            <!-- Benchmark -->
+            <div style="background:var(--n1);border-radius:var(--radius);padding:18px;border-left:3px solid var(--ok)">
+              <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ok);font-weight:700;margin-bottom:10px">✅ BENCHMARK INDUSTRIA</div>
+              <div style="font-size:13px;color:var(--n12);line-height:1.7">
+                <b style="display:block;color:var(--sf-deep);margin-bottom:8px">NPS +35 a +45</b>
+                • <b>Churn:</b> 18-22% (insurtech LATAM best-in-class)<br>
+                • <b>FNOL resolution:</b> 24h average (automated triage)<br>
+                • <b>First Contact Resolution:</b> 85-90% (omnicanal + IA)<br>
+                • <b>Renovación proactiva:</b> +25% retention con outreach pre-vencimiento
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:16px;padding:12px 16px;background:#e8f1fc;border-radius:6px;border-left:3px solid var(--sf-blue)">
+            <div style="font-size:11.5px;color:var(--sf-deep);line-height:1.6">
+              <b>💰 ROI Proyectado:</b> 28% → 22% churn (-6pp) = <b>$18M-24M revenue protected</b> | NPS +23 → +30 (Q2 FY27) → +35 (Q4 FY27) | Target: 90% FCR, 24h FNOL
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary Box -->
+      <div style="margin-top:28px;background:linear-gradient(135deg,#23366f 0%,#2167ae 100%);border-radius:var(--radius);padding:24px 28px;color:#fff">
+        <h4 style="color:var(--gold);margin:0 0 16px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700">📊 IMPACTO AGREGADO FY27</h4>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+          <div>
+            <div style="font-size:28px;font-weight:700;color:#fff;line-height:1;margin-bottom:6px">$2.8M</div>
+            <div style="font-size:11px;color:#ffffffb3;text-transform:uppercase;letter-spacing:1px">Savings Operacionales</div>
+          </div>
+          <div>
+            <div style="font-size:28px;font-weight:700;color:#fff;line-height:1;margin-bottom:6px">$8-12M</div>
+            <div style="font-size:11px;color:#ffffffb3;text-transform:uppercase;letter-spacing:1px">Revenue Incremental</div>
+          </div>
+          <div>
+            <div style="font-size:28px;font-weight:700;color:#fff;line-height:1;margin-bottom:6px">$18-24M</div>
+            <div style="font-size:11px;color:#ffffffb3;text-transform:uppercase;letter-spacing:1px">Revenue Protected (Churn)</div>
+          </div>
+          <div>
+            <div style="font-size:28px;font-weight:700;color:#fff;line-height:1;margin-bottom:6px">340%</div>
+            <div style="font-size:11px;color:#ffffffb3;text-transform:uppercase;letter-spacing:1px">ROI Año 1 Proyectado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TobIAs Results & Proof of Concept -->
+<section class="alt" id="tobias">
+  <div class="wrap">
+    <span class="section-no">00B · CONTEXTO AGENTFORCE TOBIAS</span>
+    <h2>TobIAs: El Primer Agente en Producción</h2>
+    <p class="h2-sub">
+      Caso de éxito demostrado que valida la estrategia de industrialización agéntica. TobIAs (primer Agentforce en seguros Chile) entregó ROI medible en 60 días y se convirtió en el blueprint para escalar a 33 agentes.
+    </p>
+
+    <!-- Hero Stats -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px">
+      <div class="metric-card" style="background:#e8f1fc;border:1px solid #c4daf7">
+        <div class="metric-value" style="color:var(--sf-blue-active)">85%</div>
+        <div class="metric-label" style="color:var(--sf-blue-active)">Resolución Autónoma</div>
+        <div class="metric-desc">Sin intervención humana</div>
+      </div>
+      <div class="metric-card" style="background:#d4f4dd;border:1px solid #a7e9aa">
+        <div class="metric-value" style="color:#1e7e34">$479K</div>
+        <div class="metric-label" style="color:#1e7e34">Savings Anuales</div>
+        <div class="metric-desc">ROI demostrado año 1</div>
+      </div>
+      <div class="metric-card" style="background:#fff4e6;border:1px solid #ffc8a9">
+        <div class="metric-value" style="color:#ca8a04">+23</div>
+        <div class="metric-label" style="color:#ca8a04">NPS Incremento</div>
+        <div class="metric-desc">Customer satisfaction</div>
+      </div>
+      <div class="metric-card" style="background:#e8f1fc;border:1px solid #c4daf7">
+        <div class="metric-value" style="color:var(--sf-blue-active)">-10%</div>
+        <div class="metric-label" style="color:var(--sf-blue-active)">Call Volume</div>
+        <div class="metric-desc">Reducción contact center</div>
+      </div>
+    </div>
+
+    <!-- Timeline & Deployment -->
+    <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 32px;margin-bottom:32px;box-shadow:var(--shadow)">
+      <h3 style="color:var(--sf-deep);margin:0 0 20px;font-size:16px;font-weight:600;display:flex;align-items:center;gap:10px">
+        <span style="font-size:24px">📅</span> Timeline de Implementación
+      </h3>
+      <div style="position:relative;padding-left:32px">
+        <!-- Vertical Line -->
+        <div style="position:absolute;left:12px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--sf-blue),var(--ok))"></div>
+
+        <!-- Timeline Items -->
+        <div style="position:relative;margin-bottom:28px">
+          <div style="position:absolute;left:-26px;width:14px;height:14px;border-radius:50%;background:var(--sf-blue);border:3px solid #fff;box-shadow:0 0 0 2px var(--sf-blue)"></div>
+          <div style="background:var(--n1);border-radius:var(--radius);padding:16px 18px">
+            <div style="font-size:10px;color:var(--sf-blue);text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin-bottom:6px">Enero 2026 — Discovery</div>
+            <div style="font-size:13px;color:var(--n12);line-height:1.6">
+              Workshop con equipo Customer Service y IT. Identificación use case: queries repetitivas (estado de póliza, coberturas, claims status). Definición KPIs baseline.
+            </div>
+          </div>
+        </div>
+
+        <div style="position:relative;margin-bottom:28px">
+          <div style="position:absolute;left:-26px;width:14px;height:14px;border-radius:50%;background:var(--sf-blue);border:3px solid #fff;box-shadow:0 0 0 2px var(--sf-blue)"></div>
+          <div style="background:var(--n1);border-radius:var(--radius);padding:16px 18px">
+            <div style="font-size:10px;color:var(--sf-blue);text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin-bottom:6px">Febrero 2026 — Build</div>
+            <div style="font-size:13px;color:var(--n12);line-height:1.6">
+              <b>4 semanas desarrollo:</b> Configuración Agentforce (Topics, Instructions, Actions), integración FSC (Customer 360, Policy Objects), knowledge base (150+ artículos Salesforce Knowledge), testing UAT con 20 casos piloto.
+            </div>
+          </div>
+        </div>
+
+        <div style="position:relative;margin-bottom:28px">
+          <div style="position:absolute;left:-26px;width:14px;height:14px;border-radius:50%;background:var(--sf-blue);border:3px solid #fff;box-shadow:0 0 0 2px var(--sf-blue)"></div>
+          <div style="background:var(--n1);border-radius:var(--radius);padding:16px 18px">
+            <div style="font-size:10px;color:var(--sf-blue);text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin-bottom:6px">Marzo 2026 — Pilot</div>
+            <div style="font-size:13px;color:var(--n12);line-height:1.6">
+              <b>Beta con 500 clientes:</b> Habilitación canal WhatsApp Business. Monitoreo conversaciones en tiempo real. A/B testing: TobIAs vs. agentes humanos. Iteración diaria basada en feedback.
+            </div>
+          </div>
+        </div>
+
+        <div style="position:relative">
+          <div style="position:absolute;left:-26px;width:14px;height:14px;border-radius:50%;background:var(--ok);border:3px solid #fff;box-shadow:0 0 0 2px var(--ok)"></div>
+          <div style="background:#d4f4dd;border:1px solid var(--ok);border-radius:var(--radius);padding:16px 18px">
+            <div style="font-size:10px;color:#1e7e34;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin-bottom:6px">Abril 2026 — Production ✓</div>
+            <div style="font-size:13px;color:var(--n12);line-height:1.6">
+              <b>Go-live completo:</b> TobIAs atiende 100% queries entrantes vía WhatsApp + Web Chat. Escalation automático a humanos para casos complejos (15%). Telemetría live con Flex Credits governance.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Deep Dive -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px">
+      <!-- Operational Impact -->
+      <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)">
+        <h3 style="color:var(--sf-deep);margin:0 0 18px;font-size:15px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:20px">⚙️</span> Impacto Operacional
+        </h3>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="padding:12px;background:var(--n1);border-radius:6px;border-left:3px solid var(--sf-blue)">
+            <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:4px">Call Volume Reduction</div>
+            <div style="font-size:22px;font-weight:700;color:var(--sf-deep);margin-bottom:4px">-10%</div>
+            <div style="font-size:11.5px;color:var(--n12);line-height:1.5">8,200 llamadas/mes desviadas a TobIAs. Equivalent a 4 FTE contact center liberados para casos complejos.</div>
+          </div>
+          <div style="padding:12px;background:var(--n1);border-radius:6px;border-left:3px solid var(--sf-blue)">
+            <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:4px">WhatsApp Volume</div>
+            <div style="font-size:22px;font-weight:700;color:var(--sf-deep);margin-bottom:4px">-18%</div>
+            <div style="font-size:11.5px;color:var(--n12);line-height:1.5">15.1M mensajes/mes procesados. TobIAs resuelve 85% sin escalation. Tiempo respuesta: 2.3 seg vs. 4.5 min humano.</div>
+          </div>
+          <div style="padding:12px;background:var(--n1);border-radius:6px;border-left:3px solid var(--ok)">
+            <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:4px">Savings Anuales</div>
+            <div style="font-size:22px;font-weight:700;color:#1e7e34;margin-bottom:4px">$479K USD</div>
+            <div style="font-size:11.5px;color:var(--n12);line-height:1.5">Cost avoidance: 4 FTE × $120K/año. Flex Credits investment: $158K/año. Net savings: $321K + productividad.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer Experience -->
+      <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)">
+        <h3 style="color:var(--sf-deep);margin:0 0 18px;font-size:15px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:20px">😊</span> Customer Experience
+        </h3>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="padding:12px;background:var(--n1);border-radius:6px;border-left:3px solid var(--ok)">
+            <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:4px">NPS Score</div>
+            <div style="font-size:22px;font-weight:700;color:#1e7e34;margin-bottom:4px">+23 puntos</div>
+            <div style="font-size:11.5px;color:var(--n12);line-height:1.5">Clientes que interactúan con TobIAs: NPS 78 vs. 55 baseline. "Respuesta instantánea 24/7" como driver principal.</div>
+          </div>
+          <div style="padding:12px;background:var(--n1);border-radius:6px;border-left:3px solid var(--sf-blue)">
+            <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:4px">First Contact Resolution</div>
+            <div style="font-size:22px;font-weight:700;color:var(--sf-deep);margin-bottom:4px">85%</div>
+            <div style="font-size:11.5px;color:var(--n12);line-height:1.5">Sin re-contacto. Queries resueltas en primera interacción. 15% escala a humano con contexto completo (no re-work).</div>
+          </div>
+          <div style="padding:12px;background:var(--n1);border-radius:6px;border-left:3px solid var(--sf-blue)">
+            <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:4px">Average Handle Time</div>
+            <div style="font-size:22px;font-weight:700;color:var(--sf-deep);margin-bottom:4px">2.3 seg</div>
+            <div style="font-size:11.5px;color:var(--n12);line-height:1.5">vs. 4.5 min promedio agente humano. Disponibilidad 24/7/365 sin downtime (99.97% uptime Salesforce Trust).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technical Architecture -->
+    <div style="background:linear-gradient(135deg,#23366f 0%,#2167ae 100%);border-radius:var(--radius-lg);padding:28px 32px;color:#fff;margin-bottom:32px">
+      <h3 style="color:var(--gold);margin:0 0 20px;font-size:16px;font-weight:600;display:flex;align-items:center;gap:10px">
+        <span style="font-size:24px">🏗️</span> Arquitectura Técnica (Blueprint para 33 Agentes)
+      </h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:var(--radius);padding:18px 20px">
+          <h4 style="color:var(--gold);margin:0 0 10px;font-size:13px;font-weight:600">🧠 Intelligence Layer</h4>
+          <ul style="list-style:none;margin:0;padding:0;font-size:12px;color:#ffffffcc;line-height:1.7">
+            <li style="margin-bottom:6px">• Agentforce Service Agent</li>
+            <li style="margin-bottom:6px">• 150+ Knowledge Articles</li>
+            <li style="margin-bottom:6px">• Einstein Topic Classification</li>
+            <li style="margin-bottom:6px">• Custom Actions (8 flows)</li>
+            <li>• Grounding con FSC data</li>
+          </ul>
+        </div>
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:var(--radius);padding:18px 20px">
+          <h4 style="color:var(--gold);margin:0 0 10px;font-size:13px;font-weight:600">📊 Data Layer</h4>
+          <ul style="list-style:none;margin:0;padding:0;font-size:12px;color:#ffffffcc;line-height:1.7">
+            <li style="margin-bottom:6px">• Financial Services Cloud</li>
+            <li style="margin-bottom:6px">• Customer 360 (Person Accounts)</li>
+            <li style="margin-bottom:6px">• Insurance Policy Objects</li>
+            <li style="margin-bottom:6px">• Claims Management</li>
+            <li>• Omni-Channel routing</li>
+          </ul>
+        </div>
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:var(--radius);padding:18px 20px">
+          <h4 style="color:var(--gold);margin:0 0 10px;font-size:13px;font-weight:600">🔐 Trust & Governance</h4>
+          <ul style="list-style:none;margin:0;padding:0;font-size:12px;color:#ffffffcc;line-height:1.7">
+            <li style="margin-bottom:6px">• Einstein Trust Layer</li>
+            <li style="margin-bottom:6px">• Prompt Engineering guardrails</li>
+            <li style="margin-bottom:6px">• Audit Trail (every conversation)</li>
+            <li style="margin-bottom:6px">• Flex Credits monitoring</li>
+            <li>• Human-in-the-loop escalation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Learnings -->
+    <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 32px;box-shadow:var(--shadow)">
+      <h3 style="color:var(--sf-deep);margin:0 0 20px;font-size:16px;font-weight:600;display:flex;align-items:center;gap:10px">
+        <span style="font-size:24px">💡</span> Key Learnings: De 1 a 33 Agentes
+      </h3>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
+        <div>
+          <h4 style="color:var(--ok);margin:0 0 12px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px">
+            <span style="font-size:18px">✅</span> Lo que Funcionó
+          </h4>
+          <ul style="list-style:none;margin:0;padding:0;font-size:12.5px;color:var(--n12);line-height:1.7">
+            <li style="margin-bottom:10px;padding-left:18px;position:relative">
+              <span style="position:absolute;left:0;color:var(--ok);font-weight:700">▸</span>
+              <b>Scope acotado:</b> Un canal (WhatsApp), un use case (queries repetitivas). Evitar feature creep en MVP.
+            </li>
+            <li style="margin-bottom:10px;padding-left:18px;position:relative">
+              <span style="position:absolute;left:0;color:var(--ok);font-weight:700">▸</span>
+              <b>Human-in-the-loop desde día 1:</b> Escalation a agentes para casos edge. No "full automation" prematura.
+            </li>
+            <li style="margin-bottom:10px;padding-left:18px;position:relative">
+              <span style="position:absolute;left:0;color:var(--ok);font-weight:700">▸</span>
+              <b>Knowledge base robusto:</b> 150 artículos curados > LLM alucinaciones. Grounding es crítico.
+            </li>
+            <li style="padding-left:18px;position:relative">
+              <span style="position:absolute;left:0;color:var(--ok);font-weight:700">▸</span>
+              <b>Telemetría desde día 1:</b> Dashboards con resolution rate, sentiment, Flex Credits burn. Iteración data-driven.
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:var(--err);margin:0 0 12px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px">
+            <span style="font-size:18px">⚠️</span> Desafíos Superados
+          </h4>
+          <ul style="list-style:none;margin:0;padding:0;font-size:12.5px;color:var(--n12);line-height:1.7">
+            <li style="margin-bottom:10px;padding-left:18px;position:relative">
+              <span style="position:absolute;left:0;color:var(--err);font-weight:700">▸</span>
+              <b>Change management:</b> Agentes temían ser reemplazados. Solución: re-skill hacia casos complejos + empatía.
+            </li>
+            <li style="margin-bottom:10px;padding-left:18px;position:relative">
+              <span style="position:absolute;left:0;color:var(--err);font-weight:700">▸</span>
+              <b>Data quality:</b> Customer 360 incompleto (silos legacy). Priorizar limpieza de datos P1 antes de scale.
+            </li>
+            <li style="margin-bottom:10px;padding-left:18px;position:relative">
+              <span style="position:absolute;left:0;color:var(--err);font-weight:700">▸</span>
+              <b>Prompt tuning:</b> 3 iteraciones para tone of voice correcto. "Demasiado formal" en v1 → casual en v2 → balance v3.
+            </li>
+            <li style="padding-left:18px;position:relative">
+              <span style="position:absolute;left:0;color:var(--err);font-weight:700">▸</span>
+              <b>Flex Credits governance:</b> Sin alertas → burn rate sorpresa. Implementar budgets + alertas en P1 agents.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Scaling -->
+    <div style="margin-top:32px;background:#e8f1fc;border:1px solid #c4daf7;border-radius:var(--radius-lg);padding:24px 28px;border-left:4px solid var(--sf-blue)">
+      <h4 style="color:var(--sf-blue-active);margin:0 0 12px;font-size:14px;font-weight:700">🚀 Roadmap de Escalamiento: 1 → 6 → 21 → 33 Agentes</h4>
+      <div style="font-size:13px;color:var(--n12);line-height:1.7">
+        TobIAs demostró el <b>proof of concept</b> y validó la arquitectura. Ahora escalamos con <b>6 agentes P1 (Quick Wins)</b> que multiplican ROI:
+        <ul style="margin:10px 0 0;padding-left:20px;line-height:1.8">
+          <li><b>Perfilamiento Agent:</b> Onboarding automatizado 12w → 6w</li>
+          <li><b>Renovación Agent:</b> Outreach proactivo 30d pre-vencimiento, +25% retention</li>
+          <li><b>Claims Agent:</b> FNOL triage 48h → 24h, routing inteligente</li>
+          <li><b>Cross-sell Agent:</b> Recomendaciones contextuales basadas en life events</li>
+          <li><b>Broker Support Agent:</b> Self-service quotes para 1,400 partners</li>
+          <li><b>Low-Segment Activation Agent:</b> Campaigns automatizadas para 45K clientes desatendidos</li>
+        </ul>
+        <b style="display:block;margin-top:12px;color:var(--sf-deep)">Target FY27:</b> $2.8M savings operacionales + $8-12M revenue incremental + $18-24M revenue protected (churn reduction).
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Action Plan -->
+<section id="action">
+  <div class="wrap">
+    <span class="section-no">01 · PLAN DE ACCIÓN</span>
+    <h2>Plan de Acción FY27 — táctico (en curso) + estratégico (Q restantes)</h2>
+    <p class="h2-sub">
+      Roadmap visual FY27 con iniciativas tácticas en ejecución Q2 y estratégicas en Q3-Q4. Basado en actividad CRM + Slack + Account 360.
+    </p>
+
+    <!-- GANTT ROADMAP -->
+    <div class="gantt" aria-label="Roadmap visual FY27">
+      <div class="gantt-quarter-band">
+        <div></div>
+        <div class="qb q2">Q2 FY27 · JUN–AGO 2026</div>
+        <div class="qb q3">Q3 FY27 · SEP–NOV 2026</div>
+        <div class="qb q4">Q4 FY27 · DIC 2026–FEB 2027</div>
+      </div>
+      <div class="gantt-head">
+        <div class="col-init">Iniciativa · dueño</div>
+        <div class="col-q"><b>Jun</b>'26</div>
+        <div class="col-q"><b>Jul</b></div>
+        <div class="col-q"><b>Ago</b></div>
+        <div class="col-q qsep"><b>Sep</b></div>
+        <div class="col-q"><b>Oct</b></div>
+        <div class="col-q"><b>Nov</b></div>
+        <div class="col-q qsep"><b>Dic</b></div>
+        <div class="col-q"><b>Ene</b>'27</div>
+        <div class="col-q"><b>Feb</b></div>
+      </div>
+
+      <!-- Q2 · Tácticas EN CURSO -->
+      <div class="gantt-row">
+        <div class="gantt-init">
+          <div class="name">Agentic Workshop — Resultados Presentados</div>
+          <div class="meta"><b>Zurich:</b> Zoltan Geocze (CCO) + Sandra Roitman (COO) · <b>SF:</b> Patricio Méndez</div>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-grid"><span></span><span></span><span></span><span class="qsep"></span><span></span><span></span><span class="qsep"></span><span></span><span></span></div>
+          <div class="gantt-bar" style="left:0%;width:16%;background:var(--ok)">7 Abr → 19 May<span class="milestone" title="Resultados entregados"></span></div>
+        </div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-init">
+          <div class="name">Autenticación Okta para TobIAs — Sesión Técnica</div>
+          <div class="meta"><b>Zurich:</b> IT Operations · <b>SF:</b> Patricio Méndez + Leonardo Cortes (Principal TA)</div>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-grid"><span></span><span></span><span></span><span class="qsep"></span><span></span><span></span><span class="qsep"></span><span></span><span></span></div>
+          <div class="gantt-bar" style="left:0%;width:22%;background:var(--warn)">Jun → Jul · Pendiente resolución<span class="milestone"></span></div>
+        </div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-init">
+          <div class="name">MFA Phishing-Resistant Rollout — Compliance Deadline</div>
+          <div class="meta"><b>Zurich:</b> IT/Seguridad · <b>SF:</b> TBC</div>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-grid"><span></span><span></span><span></span><span class="qsep"></span><span></span><span></span><span class="qsep"></span><span></span><span></span></div>
+          <div class="gantt-bar" style="left:0%;width:11%;background:var(--err)">Antes 1 Jul 2026<span class="milestone" title="Deadline obligatorio"></span></div>
+        </div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-init">
+          <div class="name">Integración Data - TobIAs — Customer Presentation</div>
+          <div class="meta"><b>Zurich:</b> Equipo técnico · <b>SF:</b> TBC</div>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-grid"><span></span><span></span><span></span><span class="qsep"></span><span></span><span></span><span class="qsep"></span><span></span><span></span></div>
+          <div class="gantt-bar" style="left:12%;width:5%;background:var(--ok)">26 May<span class="milestone"></span></div>
+        </div>
+      </div>
+
+      <!-- Q3 · Estratégicas -->
+      <div class="gantt-row">
+        <div class="gantt-init">
+          <div class="name">Expansión TobIAs — Sales, Brokers, Customer Service</div>
+          <div class="meta"><b>Zurich:</b> Zoltan Geocze (CCO) + Equipo BUs · <b>SF:</b> Sebastian Lembach, Cristobal Prado, Patricio Mendez</div>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-grid"><span></span><span></span><span></span><span class="qsep"></span><span></span><span></span><span class="qsep"></span><span></span><span></span></div>
+          <div class="gantt-bar" style="left:33%;width:44%;background:var(--ok)">CEO Priority explícita · Q3-Q4<span class="milestone"></span></div>
+        </div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-init">
+          <div class="name">Dreamforce 2026 — Exec Summit / CxO Experience</div>
+          <div class="meta"><b>Zurich:</b> Zoltan Geocze (CCO) · <b>SF:</b> Sebastian Lembach + Salesforce Leadership</div>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-grid"><span></span><span></span><span></span><span class="qsep"></span><span></span><span></span><span class="qsep"></span><span></span><span></span></div>
+          <div class="gantt-bar" style="left:44%;width:5%;background:var(--ok)">15-17 Sep · San Francisco<span class="milestone" title="C-Level Engagement"></span></div>
+        </div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-init">
+          <div class="name">Relacionamiento Ejecutivo con Arquitectura y Tecnología</div>
+          <div class="meta"><b>Zurich:</b> Taufic Zamur (CIO) · <b>SF:</b> Pablo Reinoso</div>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-grid"><span></span><span></span><span></span><span class="qsep"></span><span></span><span></span><span class="qsep"></span><span></span><span></span></div>
+          <div class="gantt-bar" style="left:0%;width:100%;background:var(--sf-blue-active)">Continuo FY27 · Alineación estratégica IT<span class="milestone"></span></div>
+        </div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-init">
+          <div class="name">MuleSoft Integration Modernization</div>
+          <div class="meta"><b>Zurich:</b> Arquitectura · <b>SF:</b> MuleSoft Team</div>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-grid"><span></span><span></span><span></span><span class="qsep"></span><span></span><span></span><span class="qsep"></span><span></span><span></span></div>
+          <div class="gantt-bar" style="left:44%;width:11%;background:var(--ok)">$120K Pipeline · Sep<span class="milestone"></span></div>
+        </div>
+      </div>
+
+      <!-- Q4 · Cierre -->
+      <div class="gantt-row">
+        <div class="gantt-init">
+          <div class="name">Business Case Replicación Global — Chile → LATAM/Global</div>
+          <div class="meta"><b>Zurich:</b> CEO Jerónimo Ares · <b>SF:</b> Guillaume Pierret (GAM)</div>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-grid"><span></span><span></span><span></span><span class="qsep"></span><span></span><span></span><span class="qsep"></span><span></span><span></span></div>
+          <div class="gantt-bar" style="left:66%;width:22%;background:var(--ok)">Argentina, España, UK, Irlanda, Japón, Australia<span class="milestone" title="Muy Alto Potencial"></span></div>
+        </div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-init">
+          <div class="name">Signature en Core y Marketing — $200K</div>
+          <div class="meta"><b>Zurich:</b> IT Operations · <b>SF:</b> Sebastian Lembach</div>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-grid"><span></span><span></span><span></span><span class="qsep"></span><span></span><span></span><span class="qsep"></span><span></span><span></span></div>
+          <div class="gantt-bar" style="left:55%;width:22%;background:var(--ok)">Stage: Validating Benefits · Sep-Oct<span class="milestone"></span></div>
+        </div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-init">
+          <div class="name">Insurance New Use Cases — $200K</div>
+          <div class="meta"><b>Zurich:</b> Insurance Operations · <b>SF:</b> TBC</div>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-grid"><span></span><span></span><span></span><span class="qsep"></span><span></span><span></span><span class="qsep"></span><span></span><span></span></div>
+          <div class="gantt-bar" style="left:66%;width:11%;background:var(--ok)">Pipeline · Ago<span class="milestone"></span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Gantt Legend -->
+    <div class="gantt-legend">
+      <div class="d"><div class="sw" style="background:var(--ok)"></div>Táctico Q2</div>
+      <div class="d"><div class="sw" style="background:var(--sf-blue-active)"></div>Estratégico</div>
+      <div class="d"><div class="sw" style="background:var(--err)"></div>Regulatorio</div>
+      <div class="d"><div class="sw" style="background:var(--af-violet)"></div>Visión FY28</div>
+      <div class="d"><div class="ms"></div>Milestone</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Stakeholders -->
+<section id="stakeholders" class="alt">
+  <div class="wrap">
+    <span class="section-no">02 · STAKEHOLDERS</span>
+    <h2>Estrategia de Stakeholders — champions de hoy y a quiénes ir a buscar</h2>
+    <p class="h2-sub">Matriz Influencia × Interés.</p>
+
+    <!-- MATRIZ POWER / INTEREST -->
+    <div class="pi-wrap">
+      <div class="pi-matrix">
+        <!-- eje Y -->
+        <div class="pi-axis-y"><div class="arrow">▲</div><span class="lbl">Influencia · poder de decisión</span></div>
+
+        <!-- TL · Alta influencia / Bajo interés -->
+        <div class="pi-cell tl">
+          <div class="qhead">
+            <div class="qttl">Keep Satisfied<small>Alta influencia · interés bajo o latente</small></div>
+            <span class="qact">Activar</span>
+          </div>
+          <div class="pi-people">
+            <span class="pi-chip target"><span class="ch-av">CFO</span><b>CFO Zurich Chile</b><span class="role">Chief Financial Officer</span></span>
+            <span class="pi-chip risk"><span class="ch-av">LC</span><b>Legal & Compliance</b><span class="role">Head of Legal</span></span>
+          </div>
+          <div class="pi-action"><b>Jugada:</b> CFO necesita business case detallado con ROI demostrado ($479K TobIAs × 6 agentes = $2.8M savings proyectados). Legal requiere Shield + Privacy Center deployment para neutralizar preocupaciones data residency y AI explicabilidad.</div>
+        </div>
+
+        <!-- TR · Alta influencia / Alto interés -->
+        <div class="pi-cell tr">
+          <div class="qhead">
+            <div class="qttl">Manage Closely<small>Alta influencia · alto interés — núcleo</small></div>
+            <span class="qact">Proteger</span>
+          </div>
+          <div class="pi-people">
+            <span class="pi-chip champ"><span class="ch-av">ZG</span><b>Zoltan Geocze</b><span class="role">Chief Customer Officer (CCO) · Economic Buyer</span></span>
+            <span class="pi-chip"><span class="ch-av">PG</span><b>Paula Greene</b><span class="role">Chief Commercial Officer · Canal Comercial</span></span>
+            <span class="pi-chip target"><span class="ch-av">TZ</span><b>Taufic Zamur</b><span class="role">Chief Information Officer · Integration Owner</span></span>
+          </div>
+          <div class="pi-action"><b>Jugada:</b> Zoltan (CCO) es el economic buyer y sponsor activo TobIAs — confirmar asistencia Dreamforce '26 antes del 20 de junio, mantener engagement semanal y priorizar P1 agents que multiplican su éxito. Paula (Chief Commercial) lidera canal comercial y agentes — alinear estrategia de expansión TobIAs a Sales/Brokers. Taufic (CIO) necesita POC Data Cloud con 2 sistemas legacy prioritarios para validar feasibility técnica.</div>
+        </div>
+
+        <!-- BL · Baja influencia / Bajo interés -->
+        <div class="pi-cell bl">
+          <div class="qhead">
+            <div class="qttl">Monitor<small>Influencia / interés bajos por ahora</small></div>
+            <span class="qact">Observar</span>
+          </div>
+          <div class="pi-people">
+            <span class="pi-chip"><span class="ch-av">IT</span><b>IT Operations Team</b><span class="role">SysAdmin / DevOps</span></span>
+            <span class="pi-chip"><span class="ch-av">MK</span><b>Marketing Team</b><span class="role">Marketing Director</span></span>
+          </div>
+          <div class="pi-action"><b>Jugada:</b> IT Ops necesita training platform Salesforce — ofrecer enablement via Trailhead. Marketing Team tiene interés latente en Agentforce — educar con caso uso marketing agents (lead scoring, NBA, content generation) cuando P1 esté en producción.</div>
+        </div>
+
+        <!-- BR · Baja influencia / Alto interés -->
+        <div class="pi-cell br">
+          <div class="qhead">
+            <div class="qttl">Keep Informed<small>Bajo poder formal · alto interés / amplificadores</small></div>
+            <span class="qact">Amplificar</span>
+          </div>
+          <div class="pi-people">
+            <span class="pi-chip champ"><span class="ch-av">JA</span><b>Jerónimo Ares</b><span class="role">CEO Zurich Chile · Cov: Guido Ipszman</span></span>
+            <span class="pi-chip champ"><span class="ch-av">SR</span><b>Sandra Roitman</b><span class="role">Chief Operating Officer · Trust Layer Sponsor</span></span>
+            <span class="pi-chip target"><span class="ch-av">AQ</span><b>Angeles Quintana</b><span class="role">Chief Sales Officer · Canal Agentes, Salud y Sucursales</span></span>
+          </div>
+          <div class="pi-action"><b>Jugada:</b> Jerónimo (CEO) mantener informado con updates ejecutivos trimestrales sobre ROI y avances estratégicos — delegar decisiones operacionales en Zoltan. Sandra (COO) es Champion de eficiencia operacional — amplificar casos éxito Shield + MFA y testimonial TobIAs (-10% calls, -18% WhatsApp) como case study interno. Angeles (CSO) lidera canal de agentes, salud y sucursales con 1,800+ reps — necesita demo ROI de agentes ventas y workshop con 2-3 casos piloto para vencer resistencia al cambio y demostrar value proposition en campo.</div>
+        </div>
+
+        <!-- eje X -->
+        <div class="pi-axis-x"><span class="lbl">Interés en la transformación agéntica</span><div class="arrow">▶</div></div>
+      </div>
+
+      <div class="pi-legend">
+        <div class="d"><span class="pi-chip champ" style="padding:2px 8px 2px 4px;font-size:10.5px"><span class="ch-av" style="width:16px;height:16px;font-size:8px">·</span>Champion</span> — Sponsor activo, amplificar éxitos</div>
+        <div class="d"><span class="pi-chip target" style="padding:2px 8px 2px 4px;font-size:10.5px"><span class="ch-av" style="width:16px;height:16px;font-size:8px">·</span>Target 90 días</span> — Elevar con business case / POC</div>
+        <div class="d"><span class="pi-chip risk" style="padding:2px 8px 2px 4px;font-size:10.5px"><span class="ch-av" style="width:16px;height:16px;font-size:8px">·</span>Riesgo</span> — Bloqueador potencial, neutralizar</div>
+        <div class="d"><span class="pi-chip" style="padding:2px 8px 2px 4px;font-size:10.5px"><span class="ch-av" style="width:16px;height:16px;font-size:8px">·</span>Monitor</span> — Engagement pasivo, updates regulares</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Partners -->
+<section class="partners" id="partners">
+  <div class="wrap">
+    <span class="section-no">03 · PARTNERS</span>
+    <h2>Partners y Ecosistema</h2>
+    <p class="h2-sub">
+      Red de partners estratégicos que complementan la oferta de Salesforce con expertise especializado en Marketing Cloud, Agentforce y soporte técnico de CRM.
+    </p>
+    <div class="partner-grid">
+      <div class="partner-card">
+        <div class="p-head">
+          <div class="p-logo" style="background:#00a1e0;color:#fff">WD</div>
+          <div>
+            <div class="p-name">WODOBOX SpA</div>
+            <div class="p-type">Marketing Cloud & Privacy Center Partner</div>
+          </div>
+        </div>
+        <div class="p-desc">
+          Partner especializado en implementación y optimización de Marketing Cloud. Responsable de todos los proyectos de automatización de marketing, journey optimization y personalización para las campañas de Zurich Chile.
+        </div>
+        <div class="p-scope">
+          <b>Scope FY27:</b>
+          Marketing Cloud Engagement implementation, journey builder optimization, segmentación avanzada para 2.2M+ contactos, integración con Data Cloud, campañas multicanal (email, SMS, push), reporting y analytics de conversión, Privacy Center implementation y gestión.
+        </div>
+      </div>
+      <div class="partner-card">
+        <div class="p-head">
+          <div class="p-logo" style="background:#0066cc;color:#fff">AN</div>
+          <div>
+            <div class="p-name">Antártida</div>
+            <div class="p-type">Agentforce Implementation Partner</div>
+          </div>
+        </div>
+        <div class="p-desc">
+          Partner estratégico para la implementación y expansión de Agentforce. Expertise en desarrollo de agentes inteligentes, integración con sistemas legacy y arquitectura de IA empresarial. Conocimiento profundo del stack técnico de Zurich Chile.
+        </div>
+        <div class="p-scope">
+          <b>Scope FY27:</b>
+          Expansión de TobIAs a Sales, Brokers y Customer Service. Deployment de 6 agentes P1 (Quick Wins), configuración de Trust Layer, integración con sistemas legacy (AS/400, AGF, Lise), knowledge base optimization, training y enablement para equipos de negocio.
+        </div>
+      </div>
+      <div class="partner-card">
+        <div class="p-head">
+          <div class="p-logo" style="background:#ff6b35;color:#fff">BDT</div>
+          <div>
+            <div class="p-name">BDT</div>
+            <div class="p-type">CRM Technical Support Partner</div>
+          </div>
+        </div>
+        <div class="p-desc">
+          Partner encargado del soporte técnico y mantenimiento del CRM de Salesforce. Responsable de resolver incidentes, gestionar tickets, realizar ajustes de configuración y asegurar la operación continua de la plataforma CRM para Zurich Chile.
+        </div>
+        <div class="p-scope">
+          <b>Scope FY27:</b>
+          Soporte técnico L2/L3 del CRM, gestión de incidentes y service requests, troubleshooting de integraciones con sistemas legacy, mantenimiento preventivo, actualizaciones de releases, documentación técnica y soporte a usuarios finales.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footprint -->
+<section id="footprint">
+  <div class="wrap">
+    <span class="section-no">04 · FOOTPRINT Y CONSUMO</span>
+    <h2>Footprint actual y modelo de consumo</h2>
+    <p class="h2-sub">ARR total: <b style="color:var(--sf-deep)">$2.1M USD</b> distribuido en 8 categorías. Análisis de adopción y oportunidades de optimización.</p>
+
+    <!-- Footprint por categorías -->
+    <div style="margin-bottom:36px">
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sf-blue-active);font-weight:600;margin-bottom:16px">Footprint Actual por Categorías (ARR)</div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+        <div style="background:var(--n0);border:1px solid var(--line);border-radius:var(--radius);padding:18px;border-left:3px solid var(--sf-blue)">
+          <div style="font-size:24px;font-weight:700;color:var(--sf-deep);font-family:var(--ff-display);margin-bottom:4px">~33%</div>
+          <div style="font-size:13px;font-weight:600;color:var(--sf-deep);margin-bottom:6px">CRM & Seguros (FSC)</div>
+          <div style="font-size:18px;font-weight:600;color:var(--n10);font-family:var(--ff-display)">~$700K</div>
+        </div>
+
+        <div style="background:var(--n0);border:1px solid var(--line);border-radius:var(--radius);padding:18px;border-left:3px solid var(--sf-blue)">
+          <div style="font-size:24px;font-weight:700;color:var(--sf-deep);font-family:var(--ff-display);margin-bottom:4px">~24%</div>
+          <div style="font-size:13px;font-weight:600;color:var(--sf-deep);margin-bottom:6px">Marketing Cloud & Personalization</div>
+          <div style="font-size:18px;font-weight:600;color:var(--n10);font-family:var(--ff-display)">~$500K</div>
+        </div>
+
+        <div style="background:var(--n0);border:1px solid var(--line);border-radius:var(--radius);padding:18px;border-left:3px solid var(--zurich-blue)">
+          <div style="font-size:24px;font-weight:700;color:var(--sf-deep);font-family:var(--ff-display);margin-bottom:4px">~19%</div>
+          <div style="font-size:13px;font-weight:600;color:var(--sf-deep);margin-bottom:6px">Agentforce (Flex Credits)</div>
+          <div style="font-size:18px;font-weight:600;color:var(--n10);font-family:var(--ff-display)">~$400K</div>
+        </div>
+
+        <div style="background:var(--n0);border:1px solid var(--line);border-radius:var(--radius);padding:18px;border-left:3px solid var(--n8)">
+          <div style="font-size:24px;font-weight:700;color:var(--sf-deep);font-family:var(--ff-display);margin-bottom:4px">~10%</div>
+          <div style="font-size:13px;font-weight:600;color:var(--sf-deep);margin-bottom:6px">Digital Engagement (WhatsApp)</div>
+          <div style="font-size:18px;font-weight:600;color:var(--n10);font-family:var(--ff-display)">~$210K</div>
+        </div>
+
+        <div style="background:var(--n0);border:1px solid var(--line);border-radius:var(--radius);padding:18px;border-left:3px solid var(--n8)">
+          <div style="font-size:24px;font-weight:700;color:var(--sf-deep);font-family:var(--ff-display);margin-bottom:4px">~7%</div>
+          <div style="font-size:13px;font-weight:600;color:var(--sf-deep);margin-bottom:6px">Data Cloud</div>
+          <div style="font-size:18px;font-weight:600;color:var(--n10);font-family:var(--ff-display)">~$150K</div>
+        </div>
+
+        <div style="background:var(--n0);border:1px solid var(--line);border-radius:var(--radius);padding:18px;border-left:3px solid var(--n8)">
+          <div style="font-size:24px;font-weight:700;color:var(--sf-deep);font-family:var(--ff-display);margin-bottom:4px">~5%</div>
+          <div style="font-size:13px;font-weight:600;color:var(--sf-deep);margin-bottom:6px">Shield & Privacy Center</div>
+          <div style="font-size:18px;font-weight:600;color:var(--n10);font-family:var(--ff-display)">~$105K</div>
+        </div>
+
+        <div style="background:var(--n0);border:1px solid var(--line);border-radius:var(--radius);padding:18px;border-left:3px solid var(--n8)">
+          <div style="font-size:24px;font-weight:700;color:var(--sf-deep);font-family:var(--ff-display);margin-bottom:4px">~2%</div>
+          <div style="font-size:13px;font-weight:600;color:var(--sf-deep);margin-bottom:6px">Soporte y Success</div>
+          <div style="font-size:18px;font-weight:600;color:var(--n10);font-family:var(--ff-display)">~$42K</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Adopción por Producto/Servicio -->
+    <div style="margin-bottom:36px">
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sf-blue-active);font-weight:600;margin-bottom:16px">Nivel de Adopción por Producto</div>
+
+      <table class="risk-tbl" style="margin-bottom:0">
+        <thead>
+          <tr>
+            <th style="width:25%">Producto / Licencia</th>
+            <th style="width:20%">Capacidad Contratada</th>
+            <th class="c" style="width:12%">Adopción</th>
+            <th>Diagnóstico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#e8f5e9">
+            <td><b>Financial Services Cloud</b><small style="display:block;margin-top:2px">FSC Unlimited Edition</small></td>
+            <td>600 Licencias Usuario</td>
+            <td class="c"><span class="sev" style="background:#2e7d32">ALTA</span><div style="margin-top:4px;font-weight:700;color:#2e7d32">~85%</div></td>
+            <td style="font-size:12.5px">Base sólida de CRM core. Policy Admin, Customer 360, Claims Management en uso productivo por 1.4M clientes activos.</td>
+          </tr>
+          <tr style="background:#e8f5e9">
+            <td><b>Agentforce (Flex Credits)</b><small style="display:block;margin-top:2px">66.9M Credits (paid + promo)</small></td>
+            <td>418 × 100K paid + 251 × 100K promo</td>
+            <td class="c"><span class="sev" style="background:#2e7d32">MEDIA</span><div style="margin-top:4px;font-weight:700;color:#2e7d32">TobIAs</div></td>
+            <td style="font-size:12.5px">TobIAs en producción con 85% resolución autónoma, -10% call volume, NPS +23. Roadmap a 33 agentes validado en Workshop Abril '26.</td>
+          </tr>
+          <tr style="background:#fff3e0">
+            <td><b>Digital Engagement</b><small style="display:block;margin-top:2px">WhatsApp Business Platform</small></td>
+            <td>204 asientos Unlimited</td>
+            <td class="c"><span class="sev" style="background:#ef6c00">ALTA</span><div style="margin-top:4px;font-weight:700;color:#ef6c00">15.1M</div></td>
+            <td style="font-size:12.5px">15.1M mensajes WhatsApp/mes. Canal principal para TobIAs. Oportunidad expansión a ventas outbound y brokers.</td>
+          </tr>
+          <tr style="background:#fff3e0">
+            <td><b>Data Cloud</b><small style="display:block;margin-top:2px">Segmentation & Activation</small></td>
+            <td>30 × 100K credits</td>
+            <td class="c"><span class="sev" style="background:#ef6c00">BAJA</span><div style="margin-top:4px;font-weight:700;color:#ef6c00">~15%</div></td>
+            <td style="font-size:12.5px"><b style="color:var(--warn)">⚠ Gap crítico:</b> Solo 30 × 100K para 1.3M profiles. Necesidad 66M-99M credits para Customer 360 completo + integración 8 sistemas legacy.</td>
+          </tr>
+          <tr style="background:#ffebee">
+            <td><b>Salesforce Shield</b><small style="display:block;margin-top:2px">Field Encryption + Event Monitoring</small></td>
+            <td>76 usuarios</td>
+            <td class="c"><span class="sev h">MUY BAJA</span><div style="margin-top:4px;font-weight:700;color:var(--err)">13%</div></td>
+            <td style="font-size:12.5px"><b style="color:var(--err)">⚠ Subutilización crítica:</b> Solo 76 de 600 usuarios FSC (13%). Legal requiere expansion full-stack para neutralizar blockers compliance.</td>
+          </tr>
+          <tr style="background:#e8f5e9">
+            <td><b>Marketing Cloud</b><small style="display:block;margin-top:2px">Engagement + Personalization</small></td>
+            <td>2,155 contactos Engagement</td>
+            <td class="c"><span class="sev" style="background:#2e7d32">ALTA</span><div style="margin-top:4px;font-weight:700;color:#2e7d32">2.2M</div></td>
+            <td style="font-size:12.5px">2.2M contactos activos, email campaigns robustas. Personalization en web activo. Integración con Data Cloud pendiente para NBA.</td>
+          </tr>
+          <tr style="background:#ffebee">
+            <td><b>Einstein Bots</b><small style="display:block;margin-top:2px">Foundation de TobIAs (EOL)</small></td>
+            <td>150 licencias</td>
+            <td class="c"><span class="sev h">EOL</span><div style="margin-top:4px;font-weight:700;color:var(--err)">Migrar</div></td>
+            <td style="font-size:12.5px"><b style="color:var(--err)">Roadmap crítico:</b> Migración Einstein Bots → Agentforce nativo (Q3 '27) para capacidades autónomas avanzadas + reasoning.</td>
+          </tr>
+          <tr style="background:#e8f5e9">
+            <td><b>Insurance Products</b><small style="display:block;margin-top:2px">Policy & Product Administration</small></td>
+            <td>2 orgs (Policy + Product)</td>
+            <td class="c"><span class="sev" style="background:#2e7d32">PROD</span><div style="margin-top:4px;font-weight:700;color:#2e7d32">Live</div></td>
+            <td style="font-size:12.5px">Policy lifecycle management + product configuration en producción. Core de operaciones de seguros Zurich Chile.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Modelo de Consumo -->
+    <div style="background:var(--sf-navy);color:#fff;border-radius:var(--radius-lg);padding:28px 32px;border-left:4px solid var(--gold)">
+      <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px">Modelo de Consumo — Marketing Cloud + Agentforce + Data Cloud</div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+        <div>
+          <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:12px">Marketing Cloud:</div>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:13px">
+            <div style="display:flex;justify-content:space-between;padding:8px 12px;background:#ffffff0a;border-radius:4px">
+              <span style="color:#ffffffcc">Super Messages</span>
+              <span style="font-weight:700;color:var(--warn)">46% <span style="font-size:11px;color:#ffffffcc">(97.6M / 212.3M)</span></span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:8px 12px;background:#ffffff0a;border-radius:4px">
+              <span style="color:#ffffffcc">Email Attachments</span>
+              <span style="font-weight:700;color:var(--ok)">33% <span style="font-size:11px;color:#ffffffcc">(6.5M / 19.4M)</span></span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:8px 12px;background:#ffffff0a;border-radius:4px">
+              <span style="color:#ffffffcc">WhatsApp Business</span>
+              <span style="font-weight:700;color:var(--warn)">41% <span style="font-size:11px;color:#ffffffcc">(34.7M / 84.7M)</span></span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:8px 12px;background:#ffffff0a;border-radius:4px">
+              <span style="color:#ffffffcc">SMS/MMS</span>
+              <span style="font-weight:700;color:var(--ok)">5% <span style="font-size:11px;color:#ffffffcc">(3.7M / 74.5M)</span></span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:8px 12px;background:#ffffff0a;border-radius:4px">
+              <span style="color:#ffffffcc">SF Message Credits - WhatsApp</span>
+              <span style="font-weight:700;color:var(--err)">0% <span style="font-size:11px;color:#ffffffcc">(0 / 15.1M)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:12px">Agentforce:</div>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:13px">
+            <div style="display:flex;justify-content:space-between;padding:8px 12px;background:#ffffff0a;border-radius:4px">
+              <span style="color:#ffffffcc">Flex Credits</span>
+              <span style="font-weight:700;color:var(--err)">0% <span style="font-size:11px;color:#ffffffcc">(54.308 / 67.100.000)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:12px">Data Cloud:</div>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:13px">
+            <div style="display:flex;justify-content:space-between;padding:8px 12px;background:#ffffff0a;border-radius:4px">
+              <span style="color:#ffffffcc">Data Service Credits</span>
+              <span style="font-weight:700;color:var(--err)">2% <span style="font-size:11px;color:#ffffffcc">(1.725.826 / 99.750.000)</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Opportunities & Risks -->
+<section class="opp-risk" id="opportunities">
+  <div class="wrap">
+    <span class="section-no">05 · OPPORTUNITIES & RISKS</span>
+    <h2>Opportunities & Risks</h2>
+    <p class="h2-sub">
+      Pipeline activo $1.8M+ con momentum de TobIAs + gestión proactiva de 6 riesgos críticos. Deal cerrado Q1: $167K Agentforce.
+    </p>
+
+    <!-- Opportunities Grid -->
+    <div style="margin-bottom:48px">
+      <h3 style="font-size:18px;margin-bottom:24px;color:var(--sf-deep);display:flex;align-items:center;gap:10px">
+        <span style="font-size:24px">💰</span> Active Opportunities — FY27 Pipeline
+      </h3>
+
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:24px">
+        <!-- Opp 1 -->
+        <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px;border-left:4px solid var(--ok)">
+          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px">
+            <div style="font-size:15px;font-weight:700;color:var(--sf-deep)">Expansión TobIAs — Sales, Brokers, Service</div>
+            <div style="background:var(--ok);color:#fff;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:700">ALTO</div>
+          </div>
+          <div style="font-size:13px;color:var(--n12);line-height:1.6;margin-bottom:12px">
+            <b>CEO Priority explícita.</b> Replicar éxito TobIAs (85% resolución, +$479K savings) a nuevas BUs. Workshop Abril '26 definió 3 pilares: Digital Sales, Service y Awareness.
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px">
+            <div><b style="color:var(--n10)">Stage:</b> Determining Problem</div>
+            <div><b style="color:var(--n10)">Evidencia:</b> Slack Guillaume Pierret</div>
+          </div>
+        </div>
+
+        <!-- Opp 2 -->
+        <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px;border-left:4px solid var(--ok)">
+          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px">
+            <div style="font-size:15px;font-weight:700;color:var(--sf-deep)">Business Case Replicación Global</div>
+            <div style="background:var(--ok);color:#fff;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:700">MUY ALTO</div>
+          </div>
+          <div style="font-size:13px;color:var(--n12);line-height:1.6;margin-bottom:12px">
+            Chile como modelo para Argentina, España, UK, Irlanda, Japón, ZNA y Australia. Guillaume Pierret construyendo caso basado en datos TobIAs.
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px">
+            <div><b style="color:var(--n10)">Timeline:</b> Q3-Q4 FY27</div>
+            <div><b style="color:var(--n10)">AOV Global:</b> $31M</div>
+          </div>
+        </div>
+
+        <!-- Opp 3 -->
+        <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px;border-left:4px solid var(--ok)">
+          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px">
+            <div style="font-size:15px;font-weight:700;color:var(--sf-deep)">New Use Cases H2</div>
+            <div style="background:var(--ok);color:#fff;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:700">ALTO</div>
+          </div>
+          <div style="font-size:13px;color:var(--n12);line-height:1.6;margin-bottom:12px">
+            <b>$998.8K</b> — Deal identificado para Q3 FY27. Stage: Determining Problem. Oportunidad de escalar casos de uso más allá de TobIAs.
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px">
+            <div><b style="color:var(--n10)">Close:</b> Sep 2026</div>
+            <div><b style="color:var(--n10)">CRM:</b> 006ed00000WSWliAAH</div>
+          </div>
+        </div>
+
+        <!-- Opp 4 -->
+        <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px;border-left:4px solid var(--ok)">
+          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px">
+            <div style="font-size:15px;font-weight:700;color:var(--sf-deep)">Dreamforce 2026 — C-Level Engagement</div>
+            <div style="background:var(--ok);color:#fff;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:700">ALTO</div>
+          </div>
+          <div style="font-size:13px;color:var(--n12);line-height:1.6;margin-bottom:12px">
+            Zoltan Geocze (CCO) invitado a Exec Summit / CxO Experience (Sep 15-17, SF). Respuesta positiva. Fortalecer relación C-suite.
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px">
+            <div><b style="color:var(--n10)">Fecha:</b> Sep 15-17, 2026</div>
+            <div><b style="color:var(--n10)">Owner:</b> Sebastian Lembach</div>
+          </div>
+        </div>
+
+        <!-- Opp 6 -->
+        <div style="background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px;border-left:4px solid var(--warn)">
+          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px">
+            <div style="font-size:15px;font-weight:700;color:var(--sf-deep)">Ley Protección Datos 21.719 — Data Cloud + Shield</div>
+            <div style="background:var(--warn);color:#fff;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:700">MEDIA</div>
+          </div>
+          <div style="font-size:13px;color:var(--n12);line-height:1.6;margin-bottom:12px">
+            Nueva regulación chilena. Posicionar Data Cloud + Shield como solución compliance. Email enviado a Sandra Roitman (COO) Jun 2026.
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px">
+            <div><b style="color:var(--n10)">Timeline:</b> Q2 FY27</div>
+            <div><b style="color:var(--n10)">Owner:</b> Patricio Méndez</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Risks Grid -->
+    <div>
+      <h3 style="font-size:18px;margin-bottom:24px;color:var(--sf-deep);display:flex;align-items:center;gap:10px">
+        <span style="font-size:24px">⚠️</span> Active Risks — Mitigación Requerida
+      </h3>
+
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
+        <!-- Risk 1 -->
+        <div style="background:#fff8e1;border:1px solid var(--warn);border-radius:var(--radius-lg);padding:20px;border-left:4px solid var(--warn)">
+          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px">
+            <div style="font-size:15px;font-weight:700;color:var(--warn)">Claude Code / Headless 360</div>
+            <div style="background:var(--warn);color:#fff;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:700">🟡 MEDIA</div>
+          </div>
+          <div style="font-size:13px;color:var(--n13);line-height:1.6;margin-bottom:12px">
+            <b>Evidencia:</b> Guillaume Pierret alertó (May 11) que en Argentina el push de Claude Code por HQ desacelera Agentforce entre developers.
+          </div>
+          <div style="background:#fff;padding:10px;border-radius:4px;font-size:12px;color:var(--n12);margin-top:10px">
+            <b style="color:var(--warn)">Mitigación:</b> Monitorear impacto en Chile. Diferenciar con Industry-Specific AI y ecosistema integrado Data+Trust+CRM.
+          </div>
+        </div>
+
+        <!-- Risk 3 -->
+        <div style="background:#fff8e1;border:1px solid var(--warn);border-radius:var(--radius-lg);padding:20px;border-left:4px solid var(--warn)">
+          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px">
+            <div style="font-size:15px;font-weight:700;color:var(--warn)">Métricas de Adopción no Documentadas</div>
+            <div style="background:var(--warn);color:#fff;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:700">🟡 MEDIA</div>
+          </div>
+          <div style="font-size:13px;color:var(--n13);line-height:1.6;margin-bottom:12px">
+            <b>Evidencia:</b> Account Plan tiene sección "A confirmar". Usuarios activos vs. 676 FSC licencias no documentado en CRM.
+          </div>
+          <div style="background:#fff;padding:10px;border-radius:4px;font-size:12px;color:var(--n12);margin-top:10px">
+            <b style="color:var(--warn)">Mitigación:</b> Solicitar al CSM datos de adopción esta semana. Crítico para renewal y expansión.
+          </div>
+        </div>
+
+        <!-- Risk 4 -->
+        <div style="background:#ffebee;border:1px solid var(--err);border-radius:var(--radius-lg);padding:20px;border-left:4px solid var(--err)">
+          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px">
+            <div style="font-size:15px;font-weight:700;color:var(--err)">MFA Phishing-Resistant — Deadline 1 Julio 2026</div>
+            <div style="background:var(--err);color:#fff;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:700">🔴 URGENTE</div>
+          </div>
+          <div style="font-size:13px;color:var(--n13);line-height:1.6;margin-bottom:12px">
+            <b>Evidencia:</b> Obligatorio para privileged users en Salesforce Core desde 1 julio 2026. Requiere acción inmediata con IT/Seguridad.
+          </div>
+          <div style="background:#fff;padding:10px;border-radius:4px;font-size:12px;color:var(--n12);margin-top:10px">
+            <b style="color:var(--err)">Mitigación:</b> Coordinar con admin/seguridad Zurich antes del 1 julio. AE + SE ownership.
+          </div>
+        </div>
+
+        <!-- Risk 5 -->
+        <div style="background:#fff8e1;border:1px solid var(--warn);border-radius:var(--radius-lg);padding:20px;border-left:4px solid var(--warn)">
+          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px">
+            <div style="font-size:15px;font-weight:700;color:var(--warn)">Autenticación Okta para TobIAs Pendiente</div>
+            <div style="background:var(--warn);color:#fff;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:700">🟡 MEDIA</div>
+          </div>
+          <div style="font-size:13px;color:var(--n13);line-height:1.6;margin-bottom:12px">
+            <b>Evidencia:</b> DM interno David Mijares + Leonardo Cortes (Principal TA). Sesión técnica pendiente de resolución.
+          </div>
+          <div style="background:#fff;padding:10px;border-radius:4px;font-size:12px;color:var(--n12);margin-top:10px">
+            <b style="color:var(--warn)">Mitigación:</b> Resolver en próximas 2 semanas. Owner: Patricio Méndez.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Summary Box -->
+    <div style="margin-top:40px;padding:24px 28px;background:var(--n2);border:1px solid var(--line);border-radius:var(--radius-lg);border-left:4px solid var(--sf-blue)">
+      <h4 style="font-size:14px;font-weight:700;color:var(--sf-deep);margin-bottom:12px">📊 Pipeline Summary</h4>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;font-size:13px;color:var(--n12)">
+        <div>
+          <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Total Pipeline Activo</div>
+          <div style="font-size:24px;font-weight:700;color:var(--sf-deep)">$1.8M+</div>
+        </div>
+        <div>
+          <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Deals Cerrados Q1 FY27</div>
+          <div style="font-size:24px;font-weight:700;color:var(--ok)">$269K</div>
+        </div>
+        <div>
+          <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Renewals FY27</div>
+          <div style="font-size:24px;font-weight:700;color:var(--warn)">~$895K</div>
+        </div>
+        <div>
+          <div style="font-size:11px;color:var(--n10);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">AOV Global Zurich</div>
+          <div style="font-size:24px;font-weight:700;color:var(--sf-deep)">$31M</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-logo">
+      <span class="cloud"></span>
+      SALESFORCE × ZURICH CHILE · FY27 STRATEGIC ACCOUNT PLAN
+    </div>
+    <div class="f-meta">
+      Working draft · Junio 2026 · Equipo Solutions Chile · Confidencial
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  // Scroll progress bar
+  window.addEventListener('scroll', () => {
+    const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    document.getElementById('progressBar').style.width = scrolled + '%';
+  });
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('.nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if(target) {
+        const navHeight = document.querySelector('.nav').offsetHeight;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Dot rail - Active section via IntersectionObserver
+  (function(){
+    var rail = document.getElementById('dotRail');
+    if(!rail || !('IntersectionObserver' in window)) return;
+    var links = rail.querySelectorAll('a[data-rail]');
+    var byId = {};
+    links.forEach(function(a){
+      var id = a.getAttribute('data-rail');
+      var sec = document.getElementById(id);
+      if(sec){ byId[id] = a; }
+    });
+    var current = null;
+    function setActive(id){
+      if(current === id) return;
+      links.forEach(function(a){ a.classList.remove('active'); });
+      if(byId[id]){ byId[id].classList.add('active'); current = id; }
+    }
+    var io = new IntersectionObserver(function(entries){
+      var visible = entries.filter(function(e){ return e.isIntersecting; })
+                           .sort(function(a,b){ return b.intersectionRatio - a.intersectionRatio; });
+      if(visible.length){ setActive(visible[0].target.id); }
+    }, {rootMargin:'-30% 0px -55% 0px', threshold:[0, 0.25, 0.5, 0.75, 1]});
+    Object.keys(byId).forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) io.observe(el);
+    });
+  })();
+
+  // Log page load for analytics
+  console.log('Zurich Chile Strategic Account Plan FY27 loaded successfully');
+  console.log('TobIAs Resolution: 85% | Pipeline: $1.8M+ | Target: Industrialización agéntica');
+</script>
+
+</body>
+</html>
